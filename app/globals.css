@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* Custom theme configuration for Tailwind v4 */
+@theme {
+  /* Colors - Warm neutrals */
+  --color-ink: #1f1f1f;
+  --color-ink-soft: #2d2d2d;
+  --color-ink-muted: #5a5450;
+  --color-paper: #f8f6f3;
+  --color-paper-warm: #f3f0eb;
+  --color-cream: #ebe7df;
+
+  /* Signature accent - warm amber gold */
+  --color-gold: #c9a227;
+  --color-gold-light: #e6c84a;
+  --color-gold-glow: rgba(201, 162, 39, 0.15);
+
+  /* Terracotta accent */
+  --color-terracotta: #d4a373;
+  --color-terracotta-soft: #e6c9a8;
+  --color-terracotta-deep: #b8875a;
+
+  /* Navy accent */
+  --color-navy: #2c4a6e;
+  --color-navy-soft: #3d5a7a;
+  --color-navy-deep: #1a3a5c;
+
+  /* Wine/burgundy accent */
+  --color-wine: #6b2d3c;
+  --color-wine-soft: #8a4052;
+
+  /* Borders */
+  --color-border: #e0dcd4;
+  --color-border-muted: #ebe7df;
+
+  /* Fonts */
+  --font-display: var(--font-cormorant), 'Times New Roman', serif;
+  --font-body: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --spacing-section: 2.5rem;
+  --spacing-card: 1rem;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(31, 31, 31, 0.05);
+  --shadow-medium: 0 8px 40px rgba(31, 31, 31, 0.07);
+  --shadow-dramatic: 0 24px 80px rgba(31, 31, 31, 0.10);
+
+  /* Background gradients */
+  --background-image-hero-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  /* Focus states for accessibility */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Component utilities */
+@layer components {
+  .section-container {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: var(--spacing-card);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-border-muted);
+  }
+
+  .skill-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    background-color: var(--color-cream);
+    color: var(--color-ink-soft);
+    border-radius: 9999px;
+  }
+}
+
+/* Dark mode overrides */
+.dark body {
+  color: var(--color-paper);
+  background-color: var(--color-ink);
+}
+
+.dark .card {
+  background-color: var(--color-ink-soft);
+  border-color: var(--color-ink-muted);
+}
