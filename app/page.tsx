@@ -9,13 +9,17 @@ import EducationCard from '@/components/EducationCard'
 import LanguageBar from '@/components/LanguageBar'
 import BeyondWork from '@/components/BeyondWork'
 import LLYLIWidget from '@/components/LLYLIWidget'
+import ProfileCards from '@/components/ProfileCards'
 import { content } from '@/lib/content'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-paper dark:bg-[#1a1a1a] transition-colors duration-300">
+    <main className="min-h-screen bg-paper transition-colors duration-300">
       {/* 1. Hero/Landing Section */}
       <Header />
+
+      {/* Profile Summary Cards */}
+      <ProfileCards />
 
       {/* 2. About Section */}
       <Section id="about" title="About">
@@ -23,7 +27,7 @@ export default function Home() {
       </Section>
 
       {/* Projects Section (Current Work + Selected Outcomes) */}
-      <Section id="projects" title="Current Work" className="bg-paper-warm dark:bg-[#222222]">
+      <Section id="projects" title="Current Work" className="bg-paper-warm">
         {content.currentWork.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
@@ -36,7 +40,7 @@ export default function Home() {
       </Section>
 
       {/* 3. Experience Section */}
-      <Section id="experience" title="Experience" className="bg-paper-warm dark:bg-[#222222]">
+      <Section id="experience" title="Experience" className="bg-paper-warm">
         <div className="mt-4">
           {content.experience.map((exp, index) => (
             <ExperienceCard key={index} experience={exp} />
@@ -50,7 +54,7 @@ export default function Home() {
       </Section>
 
       {/* 5. Education Section */}
-      <Section id="education" title="Education & Upskilling" className="bg-paper-warm dark:bg-[#222222]">
+      <Section id="education" title="Education & Upskilling" className="bg-paper-warm">
         {content.education.map((edu, index) => (
           <EducationCard key={index} education={edu} />
         ))}
@@ -66,7 +70,7 @@ export default function Home() {
       </Section>
 
       {/* Beyond Work (bonus section) */}
-      <Section id="beyond-work" title="Beyond Work" className="bg-paper-warm dark:bg-[#222222]">
+      <Section id="beyond-work" title="Beyond Work" className="bg-paper-warm">
         <BeyondWork />
       </Section>
 

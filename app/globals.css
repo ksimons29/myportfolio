@@ -129,146 +129,162 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   DARK MODE — Complete dark theme override
+   DARK MODE — Automatic via system preference
+   Uses prefers-color-scheme media query for seamless OS integration
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Dark mode CSS variables */
-:root.dark {
-  --color-ink: #f0f0f0;
-  --color-ink-soft: #d0d0d0;
-  --color-ink-muted: #a0a0a0;
-  --color-paper: #1a1a1a;
-  --color-paper-warm: #222222;
-  --color-cream: #333333;
-  --color-gold: #e6c84a;
-  --color-gold-light: #f0d86a;
-  --color-wine: #d4758a;
-  --color-wine-soft: #c4657a;
-  --color-terracotta: #e6b88a;
-  --color-terracotta-soft: #d4a373;
-  --color-navy: #5d8ab4;
-  --color-navy-soft: #7a9fc4;
-  --color-border: #3a3a3a;
-  --color-border-muted: #333333;
-}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-ink: #f0f0f0;
+    --color-ink-soft: #d0d0d0;
+    --color-ink-muted: #a0a0a0;
+    --color-paper: #1a1a1a;
+    --color-paper-warm: #222222;
+    --color-cream: #333333;
+    --color-gold: #e6c84a;
+    --color-gold-light: #f0d86a;
+    --color-wine: #d4758a;
+    --color-wine-soft: #c4657a;
+    --color-terracotta: #e6b88a;
+    --color-terracotta-soft: #d4a373;
+    --color-navy: #5d8ab4;
+    --color-navy-soft: #7a9fc4;
+    --color-border: #3a3a3a;
+    --color-border-muted: #333333;
+  }
 
-.dark body {
-  color: #e6e6e6;
-  background-color: #1a1a1a;
-}
+  body {
+    color: #e6e6e6;
+    background-color: #1a1a1a;
+  }
 
-/* Dark mode cards */
-.dark .card {
-  background-color: #252525;
-  border-color: #3a3a3a;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
+  /* Dark mode cards */
+  .card {
+    background-color: #252525;
+    border-color: #3a3a3a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
 
-.dark .card:hover {
-  border-color: #4a4a4a;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-}
+  .card:hover {
+    border-color: #4a4a4a;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  }
 
-/* Dark mode sections with warm background */
-.dark .bg-paper-warm {
-  background-color: #222222 !important;
-}
+  /* Dark mode sections with warm background */
+  .bg-paper-warm {
+    background-color: #222222 !important;
+  }
 
-/* Dark mode section titles */
-.dark h2,
-.dark h3,
-.dark h4 {
-  color: #f0f0f0;
-}
+  /* Dark mode section titles */
+  h2,
+  h3,
+  h4 {
+    color: #f0f0f0;
+  }
 
-/* Dark mode text */
-.dark p,
-.dark li {
-  color: #b0b0b0;
-}
+  /* Dark mode text */
+  p,
+  li {
+    color: #b0b0b0;
+  }
 
-/* Dark mode links */
-.dark a:not(.text-white):not([class*="text-white"]) {
-  color: #e6c84a;
-}
+  /* Dark mode links */
+  a:not(.text-white):not([class*="text-white"]) {
+    color: #e6c84a;
+  }
 
-.dark a:hover:not(.text-white):not([class*="text-white"]) {
-  color: #f0d86a;
-}
+  a:hover:not(.text-white):not([class*="text-white"]) {
+    color: #f0d86a;
+  }
 
-/* Dark mode skill tags */
-.dark .skill-tag {
-  background-color: #333333;
-  color: #d0d0d0;
-  border: 1px solid #3a3a3a;
-}
+  /* Dark mode skill tags */
+  .skill-tag {
+    background-color: #333333;
+    color: #d0d0d0;
+    border: 1px solid #3a3a3a;
+  }
 
-.dark .skill-tag:hover {
-  background-color: rgba(230, 200, 74, 0.15);
-  border-color: #e6c84a;
-  color: #e6c84a;
-}
+  .skill-tag:hover {
+    background-color: rgba(230, 200, 74, 0.15);
+    border-color: #e6c84a;
+    color: #e6c84a;
+  }
 
-/* Dark mode footer */
-.dark footer {
-  background-color: #111111;
-}
+  /* Dark mode footer */
+  footer {
+    background-color: #111111;
+  }
 
-/* Dark mode progress bars */
-.dark .bg-cream {
-  background-color: #333333 !important;
-}
+  /* Dark mode progress bars */
+  .bg-cream {
+    background-color: #333333 !important;
+  }
 
-/* Dark mode borders */
-.dark .border-border,
-.dark .border-cream {
-  border-color: #3a3a3a !important;
-}
+  /* Dark mode borders */
+  .border-border,
+  .border-cream {
+    border-color: #3a3a3a !important;
+  }
 
-/* Dark mode strong text */
-.dark strong {
-  color: #f0f0f0;
-}
+  /* Dark mode strong text */
+  strong {
+    color: #f0f0f0;
+  }
 
-/* Dark mode code/highlight blocks */
-.dark .bg-gold-glow {
-  background-color: rgba(230, 200, 74, 0.1) !important;
-}
+  /* Dark mode code/highlight blocks */
+  .bg-gold-glow {
+    background-color: rgba(230, 200, 74, 0.1) !important;
+  }
 
-/* Dark mode selection */
-.dark ::selection {
-  background-color: #e6c84a;
-  color: #1a1a1a;
-}
+  /* Dark mode selection */
+  ::selection {
+    background-color: #e6c84a;
+    color: #1a1a1a;
+  }
 
-/* Dark mode input fields (if any) */
-.dark input,
-.dark textarea {
-  background-color: #252525;
-  border-color: #3a3a3a;
-  color: #e6e6e6;
-}
+  /* Dark mode input fields (if any) */
+  input,
+  textarea {
+    background-color: #252525;
+    border-color: #3a3a3a;
+    color: #e6e6e6;
+  }
 
-.dark input:focus,
-.dark textarea:focus {
-  border-color: #e6c84a;
-  outline-color: #e6c84a;
-}
+  input:focus,
+  textarea:focus {
+    border-color: #e6c84a;
+    outline-color: #e6c84a;
+  }
 
-/* Dark mode scrollbar */
-.dark::-webkit-scrollbar {
-  width: 8px;
-}
+  /* Dark mode scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-.dark::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
 
-.dark::-webkit-scrollbar-thumb {
-  background: #3a3a3a;
-  border-radius: 4px;
-}
+  ::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 4px;
+  }
 
-.dark::-webkit-scrollbar-thumb:hover {
-  background: #4a4a4a;
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+  }
+
+  /* Dark mode profile cards */
+  .bg-white {
+    background-color: #252525 !important;
+  }
+
+  /* Dark mode card icons */
+  .from-gold\/10 {
+    --tw-gradient-from: rgba(230, 200, 74, 0.15) !important;
+  }
+
+  .to-terracotta\/10 {
+    --tw-gradient-to: rgba(230, 184, 138, 0.15) !important;
+  }
 }
