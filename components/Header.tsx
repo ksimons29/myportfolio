@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { content } from '@/lib/content'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const { site } = content
@@ -17,8 +18,9 @@ export default function Header() {
         }}
       />
 
-      {/* Profile image - positioned top right on desktop */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10">
+      {/* Top bar with profile and theme toggle */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex items-center gap-3">
+        <ThemeToggle />
         <Image
           src="/images/profile.jpg"
           alt={site.name}

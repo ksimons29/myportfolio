@@ -27,7 +27,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
     <article className="relative pl-6 pb-8 last:pb-0 border-l-2 border-border hover:border-gold transition-colors">
       {/* Timeline dot */}
-      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-paper border-2 border-gold" />
+      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-paper dark:bg-[#1a1a1a] border-2 border-gold" />
 
       {/* Header */}
       <div className="mb-3">

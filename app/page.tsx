@@ -13,31 +13,30 @@ import { content } from '@/lib/content'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      {/* Hero Header */}
+    <main className="min-h-screen bg-paper dark:bg-[#1a1a1a] transition-colors duration-300">
+      {/* 1. Hero/Landing Section */}
       <Header />
 
-      {/* About Section */}
+      {/* 2. About Section */}
       <Section id="about" title="About">
         <AboutSection />
       </Section>
 
-      {/* Current Work */}
-      <Section id="current-work" title="Current Work" className="bg-paper-warm">
+      {/* Projects Section (Current Work + Selected Outcomes) */}
+      <Section id="projects" title="Current Work" className="bg-paper-warm dark:bg-[#222222]">
         {content.currentWork.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </Section>
 
-      {/* Selected Outcomes */}
       <Section id="outcomes" title="Selected Outcomes">
         {content.selectedOutcomes.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </Section>
 
-      {/* Experience */}
-      <Section id="experience" title="Experience" className="bg-paper-warm">
+      {/* 3. Experience Section */}
+      <Section id="experience" title="Experience" className="bg-paper-warm dark:bg-[#222222]">
         <div className="mt-4">
           {content.experience.map((exp, index) => (
             <ExperienceCard key={index} experience={exp} />
@@ -45,19 +44,19 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Skills */}
+      {/* 6. Skills Section */}
       <Section id="skills" title="Core Skills">
         <SkillsGrid />
       </Section>
 
-      {/* Education */}
-      <Section id="education" title="Education & Upskilling" className="bg-paper-warm">
+      {/* 5. Education Section */}
+      <Section id="education" title="Education & Upskilling" className="bg-paper-warm dark:bg-[#222222]">
         {content.education.map((edu, index) => (
           <EducationCard key={index} education={edu} />
         ))}
       </Section>
 
-      {/* Languages */}
+      {/* Languages (bonus section) */}
       <Section id="languages" title="Languages">
         <div className="max-w-md">
           {content.languages.map((lang, index) => (
@@ -66,12 +65,12 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Beyond Work */}
-      <Section id="beyond-work" title="Beyond Work" className="bg-paper-warm">
+      {/* Beyond Work (bonus section) */}
+      <Section id="beyond-work" title="Beyond Work" className="bg-paper-warm dark:bg-[#222222]">
         <BeyondWork />
       </Section>
 
-      {/* Footer */}
+      {/* 7. Contact Section (Footer) */}
       <Footer />
 
       {/* Floating LLYLI Widget */}
