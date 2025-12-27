@@ -1,21 +1,25 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const cards = [
   {
     icon: '/images/discovery.svg',
     title: 'Discovery to Release',
+    href: '#discovery-examples',
     description:
       'Turned unclear requests into an agreed first release. Combined interviews, workflow and journey mapping, and a quick maturity check to separate a product problem from a capability gap. Defined outcomes, constraints, and tradeoffs, then translated that into scope and priorities the team could ship.',
   },
   {
     icon: '/images/data.svg',
     title: 'Data and AI Products with Clear Success Criteria',
+    href: '#data-ai-examples',
     description:
       'Built data and AI product features from MVP to iteration. Defined success metrics and quality checks early, then used usage signals and structured feedback with domain experts to decide what to change next.',
   },
   {
     icon: '/images/collaboration.svg',
     title: 'Delivery and Stakeholder Leadership',
+    href: '#delivery-examples',
     description:
       'Kept delivery moving by making decisions explicit and ownership clear. Aligned product, engineering, and business stakeholders through tight written updates, prioritization, and unblocking, so work shipped in focused increments.',
   },
@@ -27,13 +31,15 @@ export default function ProfileCards() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((card, index) => (
-            <article
+            <Link
               key={index}
+              href={card.href}
               className="group relative bg-white rounded-xl p-6 lg:p-8
                          border border-border-muted
                          shadow-soft hover:shadow-medium
                          transition-all duration-300 ease-out
-                         hover:border-gold/30 hover:-translate-y-1"
+                         hover:border-gold/30 hover:-translate-y-1
+                         cursor-pointer block"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon container with subtle background */}
@@ -59,16 +65,25 @@ export default function ProfileCards() {
               </h3>
 
               {/* Description */}
-              <p className="font-body text-sm lg:text-base text-ink-muted leading-relaxed">
+              <p className="font-body text-sm lg:text-base text-ink-muted leading-relaxed mb-4">
                 {card.description}
               </p>
+
+              {/* See examples indicator */}
+              <div className="flex items-center gap-1 text-sm text-gold font-medium
+                              opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span>See examples</span>
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
 
               {/* Subtle accent line at bottom */}
               <div className="absolute bottom-0 left-6 right-6 h-0.5
                               bg-gradient-to-r from-transparent via-gold/0 to-transparent
                               group-hover:via-gold/40
                               transition-all duration-500" />
-            </article>
+            </Link>
           ))}
         </div>
       </div>

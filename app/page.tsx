@@ -11,6 +11,7 @@ import BeyondWork from '@/components/BeyondWork'
 import LLYLIWidget from '@/components/LLYLIWidget'
 import ProfileCards from '@/components/ProfileCards'
 import AvailabilitySection from '@/components/AvailabilitySection'
+import ExperienceExamples from '@/components/ExperienceExamples'
 import { content } from '@/lib/content'
 
 export default function Home() {
@@ -24,11 +25,14 @@ export default function Home() {
         <AboutSection />
       </Section>
 
-      {/* 3. Profile Summary Cards */}
+      {/* 3. Profile Summary Cards - Clickable, link to Experience Examples */}
       <ProfileCards />
 
       {/* 4. Availability Section */}
       <AvailabilitySection />
+
+      {/* 5. Experience Examples - Linked from Profile Cards */}
+      <ExperienceExamples />
 
       {/* Projects Section (Current Work + Selected Outcomes) */}
       <Section id="projects" title="Current Work" className="bg-paper-warm">
