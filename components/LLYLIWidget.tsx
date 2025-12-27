@@ -11,21 +11,21 @@ export default function LLYLIWidget() {
       href="https://github.com/ksimons29"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed left-6 bottom-6 z-50 group"
+      className="fixed right-6 bottom-6 z-50 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Tooltip */}
+      {/* Tooltip - positioned to the left of widget */}
       <div
         className={`
-          absolute left-full ml-4 bottom-1/4 whitespace-nowrap
+          absolute right-full mr-4 bottom-1/4 whitespace-nowrap
           bg-ink text-paper text-base px-4 py-3 rounded-xl
           transition-all duration-300 ease-out shadow-dramatic
-          ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 pointer-events-none'}
+          ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2 pointer-events-none'}
         `}
       >
         <span className="font-medium">Help with my language learning research!</span>
-        <div className="absolute right-full top-1/2 -translate-y-1/2 border-8 border-transparent border-r-ink" />
+        <div className="absolute left-full top-1/2 -translate-y-1/2 border-8 border-transparent border-l-ink" />
       </div>
 
       {/* Widget button - 3x larger */}
