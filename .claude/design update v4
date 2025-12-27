@@ -1,0 +1,366 @@
+# Design Updates v4 - Typography, Navigation & Critical Review
+
+## 1. Typography & Readability Review
+
+### Current Issues to Address
+
+**Desktop (1024px+)**
+- Hero title "Koos Simons" - Ensure 48-64px, sufficient contrast
+- Subtitle "Product Manager — Lisbon" - 20-24px, reduce if too large
+- Card headings - 24-28px recommended
+- Card body text - 16-18px for comfortable reading
+- About section body - 18-20px for main content
+- Line height: 1.5-1.7 for body text, 1.2-1.3 for headings
+
+**Mobile (320px-768px)**
+- Hero title - Scale down to 36-42px
+- Subtitle - 18-20px
+- Card headings - 20-22px
+- Body text - 16px minimum (never smaller)
+- Increase line height to 1.6-1.8 for easier reading
+- Touch targets minimum 44x44px for all interactive elements
+
+**Typography Hierarchy Issues**
+- Ensure clear visual hierarchy: H1 > H2 > H3 > Body
+- Card titles should be visually distinct from body text
+- Section headings need more weight/size differentiation
+- Consistent font weights (300 light, 400 regular, 600 semibold, 700 bold)
+
+### Recommendations
+
+**Font Stack**
+```css
+/* Headings */
+font-family: 'Inter', 'SF Pro Display', -apple-system, system-ui, sans-serif;
+
+/* Body */
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+```
+
+**Responsive Scale**
+- Use `clamp()` for fluid typography: `clamp(36px, 5vw, 64px)` for H1
+- Ensures smooth scaling across all screen sizes
+- Better than breakpoint-based font sizes
+
+**Readability**
+- Maximum line length: 65-75 characters (about 600-700px width)
+- Constrain text containers, especially on large screens
+- Add max-width to content sections
+- Increase paragraph spacing (margin-bottom: 1.5em)
+
+---
+
+## 2. Card Navigation Plan - Linking Cards to Experience
+
+### Proposed Architecture
+
+**Concept:** Click profile card → Scroll/navigate to relevant work experience examples
+
+**Option A: Anchor Links (Recommended for v1)**
+- Each of 3 profile cards links to a section below
+- Smooth scroll to "Experience Examples" section
+- Organize experiences into 3 categories matching cards:
+  1. Discovery to Release → Projects focused on 0→1 product development
+  2. Data & AI Products → Analytics/AI feature examples
+  3. Delivery & Leadership → Stakeholder management examples
+
+**Option B: Modal/Overlay**
+- Click card → Opens modal with detailed case studies
+- Better for richer content (images, metrics, timelines)
+- More complex to implement
+- Recommended for v2
+
+**Option C: Separate Pages**
+- Each card links to `/discovery`, `/data-ai`, `/delivery`
+- Dedicated page per capability area
+- Best for extensive portfolios
+- Overkill for initial version
+
+### Recommended Approach: Option A (Anchor Links)
+
+**Structure:**
+```
+[Hero Section]
+[About Section]
+[3 Profile Cards] ← Clickable
+[Availability Section]
+[Experience Examples] ← New section
+  ├─ Discovery Projects
+  ├─ Data & AI Projects
+  └─ Delivery Projects
+[Contact/Footer]
+```
+
+**Implementation Plan:**
+
+1. **Add IDs to target sections**
+   - `id="discovery-examples"`
+   - `id="data-ai-examples"`
+   - `id="delivery-examples"`
+
+2. **Make cards clickable**
+   ```jsx
+   <Link href="#discovery-examples" className="card">
+     [Card content]
+   </Link>
+   ```
+
+3. **Add smooth scroll behavior**
+   ```css
+   html {
+     scroll-behavior: smooth;
+   }
+   ```
+
+4. **Visual feedback**
+   - Hover: subtle lift/shadow increase
+   - Cursor: pointer
+   - Optional: small arrow/icon indicating clickability
+
+5. **Create "Experience Examples" section**
+   - 3 subsections (one per capability)
+   - 2-3 concrete examples per subsection
+   - Format: Company/Project name, Role, Brief outcome (1-2 sentences max)
+   - Keep concise - details go in resume/case studies
+
+**Example Experience Format:**
+```
+Discovery to Release Examples:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+GenAI Knowledge Synthesis Tool - Nike
+Turned ambiguous "AI for product teams" request into scoped MVP. 
+Shipped v1 in 3 months, 70% team adoption in first quarter.
+
+Data Governance Platform - Rabobank  
+Defined 0→1 roadmap through 15+ stakeholder interviews.
+Separated immediate quick wins from 18-month platform vision.
+```
+
+**Mobile Considerations:**
+- Ensure scroll offset accounts for fixed headers
+- Add "Back to top" button after scrolling to examples
+- Consider sticky section nav when viewing examples
+
+---
+
+## 3. Critical Design Review
+
+### ✅ Strengths
+
+**Professional Appearance**
+- Clean, modern dark theme
+- Good use of whitespace (once spacing issues fixed)
+- Professional color palette (navy/teal accents work well)
+- Consistent card-based layout
+
+**Information Hierarchy**
+- Clear hero → about → capabilities flow
+- Profile cards effectively communicate core strengths
+- Availability section addresses recruiter needs directly
+
+**Technical Implementation**
+- Modern stack (Next.js/Tailwind)
+- Should be performant and maintainable
+- Easy content updates via YAML
+
+### ⚠️ Areas for Improvement
+
+**Originality: 6/10**
+- Layout is conventional (hero → cards → content)
+- Dark theme is trendy but common in tech portfolios
+- Card grid is standard pattern
+- **Fix:** Add subtle unique elements:
+  - Custom illustrations/icons (you have SVGs - use them prominently)
+  - Unique section transitions
+  - Personal branding element (custom accent color, unique layout for one section)
+
+**Visual Interest: 7/10**
+- Current design is clean but potentially flat
+- Lacks visual hierarchy depth
+- **Fix:** 
+  - Add subtle gradients or texture to hero
+  - Use varied card heights/layouts
+  - Include project screenshots or data visualizations
+  - More prominent use of your custom SVG icons
+
+**Differentiation: 6/10**
+- Looks similar to many PM portfolios
+- Nothing memorable or "sticky"
+- **Fix:**
+  - Add one signature element (unique animation, custom illustration, interactive element)
+  - Consider brief animated data visualization showing impact
+  - Personal photo should be professional but show personality
+
+**Mobile Experience: 8/10** (pending typography fixes)
+- Layout adapts well
+- Cards stack appropriately
+- **Concerns:**
+  - Need to verify touch targets (44x44px min)
+  - Text sizing needs review
+  - Hero might still be too tall on mobile even at 50%
+
+**Professional Credibility: 8/10**
+- Clean, serious design appropriate for PM role
+- Good balance of skills showcase + availability
+- **Missing:**
+  - No metrics/outcomes visible (add to experience examples)
+  - No client logos or company references (consider adding)
+  - No social proof (testimonials, recommendations)
+
+### ❌ Critical Issues
+
+**Typography Hierarchy**
+- Current: Insufficient differentiation between heading levels
+- Impact: Reduces scanability and professionalism
+- **Fix:** Implement typography scale in v4
+
+**Readability on Large Screens**
+- Current: Text likely stretches too wide on 1440px+ monitors
+- Impact: Harder to read, looks unfinished
+- **Fix:** Add max-width containers (600-800px for text, 1200px for layout)
+
+**Interactive Feedback**
+- Current: Cards may not signal they're clickable
+- Impact: Users miss navigation opportunities
+- **Fix:** Add hover states, cursor changes, subtle animations
+
+**Content Density**
+- Current: Some sections might feel sparse
+- Impact: Looks incomplete or lightweight
+- **Fix:** Add experience examples section, more concrete outcomes
+
+---
+
+## 4. Design Comparison - PM Portfolio Standards
+
+**Compared to Typical PM Portfolios:**
+
+| Aspect | Your Site | Industry Standard | Gap |
+|--------|-----------|-------------------|-----|
+| Layout clarity | Good | Good | ✓ On par |
+| Visual polish | Good | Very Good | Minor gap |
+| Case study depth | Missing | Required | **Need to add** |
+| Metrics/outcomes | Limited | Prominent | **Need to add** |
+| Originality | Standard | Varies widely | Could improve |
+| Mobile experience | Good | Good | ✓ On par |
+| Load time | Unknown | <3s required | Test needed |
+
+**Benchmark Examples to Reference:**
+- Julie Zhou (simple, elegant, content-focused)
+- Airbnb Design team pages (visual, metric-driven)
+- Stripe product pages (clean, technical, outcome-focused)
+
+**Your site positioning:** Professional and clean, but needs more substance (case studies, metrics) to stand out in competitive PM job market.
+
+---
+
+## 5. Recommended Action Plan - v4
+
+### High Priority (Do First)
+
+1. **Typography System**
+   - Implement responsive font scale
+   - Fix line heights and spacing
+   - Test readability on mobile (real device testing)
+   - Add max-width to text containers
+
+2. **Add Experience Examples Section**
+   - Create 3 subsections matching profile cards
+   - Add 2-3 concrete examples per section
+   - Include brief metrics/outcomes
+   - Link from profile cards
+
+3. **Interactive States**
+   - Add hover effects to cards
+   - Cursor changes for clickable elements
+   - Smooth scroll behavior
+   - Visual feedback on interaction
+
+### Medium Priority (Next)
+
+4. **Visual Interest**
+   - Enhance hero with subtle gradient
+   - Make SVG icons more prominent
+   - Add subtle animations (entrance, scroll)
+   - Consider light texture/pattern
+
+5. **Content Additions**
+   - Add 1-2 key metrics to profile cards
+   - Include company logos (if allowed)
+   - Brief testimonial/recommendation (1-2 sentences)
+
+### Low Priority (Polish)
+
+6. **Unique Elements**
+   - Custom illustration or data viz
+   - Signature interaction or animation
+   - Personal branding refinement
+   - Micro-interactions
+
+---
+
+## 6. V4 Requirements Summary
+
+```markdown
+### Typography Updates
+- [ ] Implement fluid typography using clamp()
+- [ ] Scale: H1 (clamp 36-64px), H2 (clamp 28-40px), Body (16-18px)
+- [ ] Line heights: 1.2-1.3 headings, 1.6-1.8 body
+- [ ] Add max-width to text containers (600-800px)
+- [ ] Test on real mobile devices (iPhone, Android)
+
+### Navigation - Card to Experience Linking
+- [ ] Add "Experience Examples" section below Availability
+- [ ] Create 3 subsections (Discovery, Data/AI, Delivery)
+- [ ] Add 2-3 examples per subsection with metrics
+- [ ] Make profile cards clickable anchor links
+- [ ] Implement smooth scroll behavior
+- [ ] Add hover states + cursor pointer to cards
+- [ ] Add scroll offset for fixed headers
+
+### Visual Polish
+- [ ] Add hover effects to all cards
+- [ ] Subtle shadow lift on hover
+- [ ] Cursor changes for interactive elements
+- [ ] Entrance animations (subtle fade-in)
+- [ ] Enhance hero background (gradient/texture)
+
+### Content Additions
+- [ ] Add key metrics to experience examples
+- [ ] Format: "X% improvement in Y" or "Shipped in X months"
+- [ ] Keep concise (1-2 sentences per example)
+- [ ] Consider adding 1 brief testimonial
+
+### Testing Required
+- [ ] Mobile typography (real devices)
+- [ ] Touch target sizes (min 44x44px)
+- [ ] Smooth scroll on iOS Safari
+- [ ] Performance (Lighthouse score)
+- [ ] Cross-browser testing
+```
+
+---
+
+## 7. Final Assessment
+
+**Overall Grade: B+ (7.5/10)**
+
+**For PM Portfolio Purposes:**
+- ✅ Professional and clean
+- ✅ Good technical foundation
+- ✅ Responsive and accessible
+- ⚠️ Needs more depth (case studies/metrics)
+- ⚠️ Could be more visually distinctive
+- ⚠️ Typography needs refinement
+
+**Recommendation:** 
+This is a solid foundation. With v4 updates (typography, experience examples, interactive navigation), it becomes a strong portfolio site suitable for senior PM applications. The addition of concrete examples with metrics is critical for competitive roles.
+
+**Timeline Estimate:**
+- Typography fixes: 2-4 hours
+- Experience section + navigation: 3-5 hours
+- Visual polish: 2-3 hours
+- Testing: 2 hours
+- **Total: 9-14 hours of development**
+
+**Not a blocker for applications, but v4 improvements will significantly strengthen candidacy.**
