@@ -287,4 +287,9 @@
   .to-terracotta\/10 {
     --tw-gradient-to: rgba(230, 184, 138, 0.15) !important;
   }
+
+  /* Dark mode availability section */
+  .bg-cream\/50 {
+    background-color: rgba(51, 51, 51, 0.5) !important;
+  }
 }

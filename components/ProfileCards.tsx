@@ -23,7 +23,7 @@ const cards = [
 
 export default function ProfileCards() {
   return (
-    <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-paper-warm">
+    <section className="relative py-10 px-4 sm:px-6 lg:px-8 bg-paper-warm">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((card, index) => (

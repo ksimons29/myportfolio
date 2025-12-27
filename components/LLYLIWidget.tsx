@@ -11,30 +11,30 @@ export default function LLYLIWidget() {
       href="https://github.com/ksimons29"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed left-4 bottom-4 z-50 group"
+      className="fixed left-6 bottom-6 z-50 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Tooltip */}
       <div
         className={`
-          absolute left-full ml-3 bottom-0 whitespace-nowrap
-          bg-ink text-paper text-sm px-3 py-2 rounded-lg
-          transition-all duration-300 ease-out
+          absolute left-full ml-4 bottom-1/4 whitespace-nowrap
+          bg-ink text-paper text-base px-4 py-3 rounded-xl
+          transition-all duration-300 ease-out shadow-dramatic
           ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 pointer-events-none'}
         `}
       >
-        Help with my language learning research!
+        <span className="font-medium">Help with my language learning research!</span>
         <div className="absolute right-full top-1/2 -translate-y-1/2 border-8 border-transparent border-r-ink" />
       </div>
 
-      {/* Widget button */}
+      {/* Widget button - 3x larger */}
       <div
         className={`
-          relative w-14 h-14 rounded-full overflow-hidden
-          border-2 border-gold shadow-dramatic
+          relative w-24 h-24 rounded-full overflow-hidden
+          border-4 border-gold shadow-dramatic
           transition-all duration-300 ease-bounce
-          ${isHovered ? 'scale-110 shadow-[0_0_20px_rgba(201,162,39,0.4)]' : ''}
+          ${isHovered ? 'scale-110 shadow-[0_0_30px_rgba(201,162,39,0.5)]' : ''}
         `}
       >
         <Image
@@ -45,8 +45,8 @@ export default function LLYLIWidget() {
         />
       </div>
 
-      {/* Pulse animation */}
-      <div className="absolute inset-0 rounded-full border-2 border-gold animate-ping opacity-20" />
+      {/* Pulse animation - larger */}
+      <div className="absolute inset-0 rounded-full border-3 border-gold animate-ping opacity-25" />
     </a>
   )
 }

@@ -5,7 +5,7 @@ export default function Header() {
   const { site } = content
 
   return (
-    <header className="relative min-h-[50vh] flex items-center justify-center bg-hero-gradient overflow-hidden">
+    <header className="relative py-8 sm:py-10 flex items-center justify-center bg-hero-gradient overflow-hidden">
       {/* Gradient overlays for depth */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -18,9 +18,9 @@ export default function Header() {
       />
 
       {/* Hero content with prominent profile image */}
-      <div className="relative z-[2] max-w-4xl w-full px-4 sm:px-6 py-12 text-center">
+      <div className="relative z-[2] max-w-4xl w-full px-4 sm:px-6 py-6 text-center">
         {/* Large profile image - visual anchor */}
-        <div className="mb-6 flex justify-center">
+        <div className="mb-4 flex justify-center">
           <div className="relative">
             <Image
               src="/images/profile.jpg"
@@ -44,7 +44,7 @@ export default function Header() {
         </p>
 
         {/* Social links */}
-        <div className="flex justify-center gap-4 mt-6">
+        <div className="flex justify-center gap-4 mt-4">
           {site.socials.linkedin && (
             <a
               href={`https://linkedin.com/in/${site.socials.linkedin}`}

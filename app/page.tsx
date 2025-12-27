@@ -10,6 +10,7 @@ import LanguageBar from '@/components/LanguageBar'
 import BeyondWork from '@/components/BeyondWork'
 import LLYLIWidget from '@/components/LLYLIWidget'
 import ProfileCards from '@/components/ProfileCards'
+import AvailabilitySection from '@/components/AvailabilitySection'
 import { content } from '@/lib/content'
 
 export default function Home() {
@@ -18,13 +19,16 @@ export default function Home() {
       {/* 1. Hero/Landing Section */}
       <Header />
 
-      {/* Profile Summary Cards */}
-      <ProfileCards />
-
       {/* 2. About Section */}
       <Section id="about" title="About">
         <AboutSection />
       </Section>
+
+      {/* 3. Profile Summary Cards */}
+      <ProfileCards />
+
+      {/* 4. Availability Section */}
+      <AvailabilitySection />
 
       {/* Projects Section (Current Work + Selected Outcomes) */}
       <Section id="projects" title="Current Work" className="bg-paper-warm">
