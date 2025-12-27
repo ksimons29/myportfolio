@@ -8,7 +8,7 @@ export default function LLYLIWidget() {
 
   return (
     <a
-      href="https://github.com/ksimons29"
+      href="https://tally.so/r/jaaBzJ"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed right-6 bottom-6 z-50 group"
