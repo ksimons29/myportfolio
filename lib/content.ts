@@ -3,9 +3,9 @@ import { PortfolioContent } from './types'
 export const content: PortfolioContent = {
   site: {
     name: 'Koos Simons',
-    title: 'Product Manager — Lisbon',
+    title: 'Senior Product Manager',
     email: 'koossimons91@gmail.com',
-    description: 'Product Manager based in Lisbon with 6 years PM experience building products that turn complex problems into solutions people actually adopt.',
+    description: 'Senior Product Manager based in Lisbon with 6 years PM experience building products that turn complex problems into solutions people actually adopt.',
     location: 'Lisbon, Portugal',
     socials: {
       linkedin: 'koossimons',
@@ -14,141 +14,163 @@ export const content: PortfolioContent = {
     },
   },
 
-  about: `**6 years shipping products, 3+ years in strategy & consulting**
+  about: `**6 years in product roles. 10 years turning complex problems into simple products.**
 
-I structure messy problems into products people actually use. Built across retail, finance, and manufacturing, leading with real usage and outcomes that prove things work. My consulting background means I'm comfortable with complexity: stakeholder alignment, ambiguous briefs, data-heavy environments.
+I run structured discovery, define clear outcomes, and ship in focused increments. Built across retail (Nike), finance (Rabobank), and telecom (KPN) — from analytics platforms serving 2,000+ users to GenAI assistants with ~95% answer accuracy.
 
-Currently building LLYLI, a language learning app → check the button on the left to help me with my research, and completing Carnegie Mellon's PM Program. Based in Lisbon.`,
+Completing Carnegie Mellon's Advanced PM Program. Building LLYLI, an AI language learning app. Based in Lisbon.`,
 
   currentWork: [
     {
       title: 'Learn the Language You Live In (LLYLI)',
-      subtitle: 'Personal Project | VibeCoding Lisboa',
+      subtitle: 'VibeCoding Lisboa',
       caption: '2025 - Present',
       link: 'https://github.com/ksimons29',
-      quote: 'Building an AI-powered language learning app that captures words from your daily life',
-      description: `Creating a mobile app that captures words and phrases from your environment (menus, signs, conversations) and turns them into personalized spaced-repetition flashcards.
+      quote: 'An AI-powered app that captures words from your environment and turns them into personalized flashcards',
+      description: `An AI-powered app that captures words from your environment (menus, signs, conversations) and turns them into personalized spaced-repetition flashcards.
 
-**What I'm learning:**
-- End-to-end product development (discovery → design → build → test)
-- GenAI integration (OCR, translation APIs, prompt engineering)
-- Mobile-first UX for language learners
-- Go-to-market strategy for consumer apps
+End-to-end product work: discovery with expat language learners, GenAI integration (OCR, translation APIs, prompt engineering), mobile-first UX.
 
-Part of hands-on upskilling through VibeCoding Lisboa's product community.`,
+Part of VibeCoding Lisboa's product community. Also completing Vibe Skills courses.`,
     },
   ],
 
   selectedOutcomes: [
     {
       title: 'GenAI Knowledge Assistant',
-      subtitle: 'B2B Product | Financial Services',
-      caption: '2024',
-      description: `**Challenge:** Teams wasting 2+ hours daily searching fragmented documentation across multiple systems.
+      subtitle: 'B2B Internal Product | Financial Services',
+      caption: '2024-2025',
+      description: `**Challenge:**
+Risk and IT teams wasting hours searching fragmented policy documentation across multiple systems.
 
 **What I Did:**
-- Led discovery with 40+ user interviews across 6 departments
-- Designed RAG-based solution using Azure OpenAI
-- Built evaluation framework for answer quality and relevance
-- Ran phased rollout with usage tracking and feedback loops
+- Led discovery (40+ interviews, workflow mapping, in-product surveys) to turn vague "help colleagues find the right rules" request into prioritized roadmap
+- Partnered with engineering and content owners to design RAG pipeline and role-based access for regulated content
+- Built governance and QA model (risk scoring, SME review loops, lifecycle rules) adopted by security and compliance as template for future GenAI tools
+- Ran A/B and multivariate tests on LLM and retrieval settings
 
 **Impact:**
-- 30% reduction in search time
-- 200+ active users within 3 months
-- 4.2/5 user satisfaction score`,
+- ~95% answer accuracy
+- 4+ hours saved per user per month
+- Governance model adopted as bank-wide standard`,
     },
     {
       title: 'Self-Service Analytics Platform',
-      subtitle: 'Data Product | Retail',
-      caption: '2023',
-      description: `**Challenge:** BI team drowning in 200+ custom report requests per quarter, blocking decision-making speed.
+      subtitle: 'Internal Analytics Product | Retail',
+      caption: '2022-2024',
+      description: `**Challenge:**
+BI team overwhelmed with custom report requests; decision-makers waiting days for basic insights.
 
 **What I Did:**
-- Ran comparative evaluation of 5 platforms (technical + UX criteria)
-- Built TCO business case that got leadership buy-in
-- Led cross-functional implementation and rollout
-- Designed training strategy and adoption metrics
+- Owned roadmap for 2,000+ user EMEA analytics platform serving retail, merchandising, and finance
+- Led 13-person squad; introduced operating model clarifying ownership for ~100 KPIs
+- Built 90+ person power-user community and structured onboarding program
+- Co-created pricing and promotion analytics, including Nike's first EMEA discount-sales overview
+- Embedded Collibra to catalogue key data and metrics
 
 **Impact:**
-- 40% faster report creation time
-- 120+ business users self-serving within 6 months
-- Request backlog cleared in 90 days`,
+- Decision speed improved ~25%
+- Reporting inconsistencies reduced ~40%
+- Incident resolution time reduced ~25%
+- Adoption increased ~60%, ramp-up time reduced ~25%`,
     },
     {
       title: 'Data Governance Operating Model',
-      subtitle: 'Platform Product | Banking',
-      caption: '2022-2023',
-      description: `**Challenge:** Fragmented data governance causing compliance gaps, slow approvals, and frustrated data teams.
+      subtitle: 'Platform/Process Product | Retail',
+      caption: '2022-2024',
+      description: `**Challenge:**
+Fragmented data governance causing compliance gaps, slow approvals, and frustrated data teams.
 
 **What I Did:**
-- Designed federated governance model with clear ownership
-- Built visible quality scorecard (gamified improvement)
-- Launched data stewardship community across 8 business units
-- Created lightweight process that balanced control with speed
+- Designed federated governance model with clear ownership and access rules
+- Embedded Collibra to catalogue assets (business terms, datasets), aligning ~100 KPIs
+- Built visible quality scorecard with gamified improvement tracking
+- Added stewardship and approval workflows to reduce ambiguity and increase trust
 
 **Impact:**
-- 85% policy adoption in 6 months
-- Quality scores improved from 60% → 85%
-- Approval process reduced from 4 weeks → 1 week`,
+- Policy adoption: 85% in 6 months
+- Quality scores: 60% → 85%
+- Approval process: 4 weeks → 1 week`,
     },
   ],
 
   experience: [
     {
       company: 'Cognizant',
-      role: 'Product Manager & Consulting Manager',
-      period: '2016 - Oct 2025',
+      role: 'Product Manager (via Cognizant)',
+      period: '2016 - Oct. 2025',
       link: 'https://cognizant.com',
-      description: `Partnered with clients across banking, retail, telecom, and public sector to ship data products, analytics platforms, and AI tools. Grew from BI consultant to consulting manager, leading cross-functional teams from discovery to rollout.
+      description: `Partner to clients in banking, retail, telecom, and manufacturing where technology, data, and people meet. Grew from BI/analytics consultant to consulting manager acting as in-house Product Manager for internal platforms and AI-assisted tools. Led cross-functional teams from discovery to rollout.
 
-**Key Client Projects:**
+**Client Projects:**
 
-**Rabobank** (2022-2024) — Product Manager
-Led GenAI assistant for policy/compliance search. 40+ user interviews, RAG pipeline design, ~95% answer accuracy. Also designed data governance operating model.
+| Client | Role | Dates | Product |
+|--------|------|-------|---------|
+| Rabobank | Product Manager | 2024 – Aug. 2025 | RAG-based GenAI assistant for policy and security rules |
+| Nike EMEA | Product Manager | 2022 – Jul. 2024 | EMEA insights and analytics platform (2,000+ users) |
+| Marel | Product Owner & Project Manager | 2019–2021 | Enterprise data platform; led maturity assessment, team onboarding, and Informatica IICS setup |
+| KPN | Product Owner | 2017–2019 | Self-service BI and KPI reporting for B2B telecom |
+| Teva EMEA | Business Analyst | 2016–2017 | Predictive analytics dashboard for out-of-stock risk |
 
-**Nike EMEA** (2021-2022) — Product Manager
-Scaled self-service analytics platform to 2,000+ users. Decision speed +25%, data inconsistencies -40%. Built business cases and led cross-functional rollout.
-
-**KPN** (2019-2021) — Product Owner
-Managed customer data platforms and analytics tools for telecom operations. Prioritized backlogs, ran discovery, coordinated business and engineering teams.
-
-**Gemeente Amsterdam** (2017-2019) — Business Analyst
-Supported digital transformation for municipal services. Requirements gathering, process mapping, stakeholder alignment for citizen-facing platforms.`,
+**Cognizant Internal:**
+- Co-founded the internal Data Management Club and led Benelux data events with 200+ participants
+- Facilitated cross-European learning on product, governance, and change
+- Started as trainee at Qlik, building foundation in BI and analytics software`,
     },
   ],
 
   skills: [
     {
-      name: 'PM Core',
+      name: 'Product',
       skills: [
-        'Product Discovery',
-        'Roadmapping',
-        'User Research',
-        'Stakeholder Management',
-        'Agile/Scrum',
-        'Business Case Development',
+        'Product Discovery & Problem Framing',
+        'Outcome-based Roadmapping',
+        'Backlog Management & Prioritization',
+        'Experimentation & MVPs',
+        'Defining & Tracking Product Metrics',
+        'Stakeholder Alignment & Storytelling',
+        'Cross-functional Team Leadership',
+        'Rollout, Change & Adoption',
+        'Project Management',
       ],
     },
     {
-      name: 'Technical',
+      name: 'AI & Automation',
       skills: [
-        'GenAI/LLMs',
-        'RAG Architecture',
-        'Data Products',
-        'Analytics Platforms',
+        'Prompt engineering & evaluation',
+        'RAG pipelines (design, testing, governance)',
+        'Claude, Claude Code, Azure OpenAI',
+      ],
+    },
+    {
+      name: 'Data & Analytics',
+      skills: [
         'SQL',
-        'Python Basics',
+        'Tableau, Power BI, Qlik',
+        'Snowflake, Databricks',
+        'Collibra (data catalog & governance)',
+        'Informatica Data Quality, Informatica IICS',
+        'Salesforce (as data source)',
       ],
     },
     {
-      name: 'Domain',
+      name: 'Development & Workflow',
+      skills: [
+        'VS Code',
+        'Jira, Azure DevOps',
+        'ServiceNow',
+        'Confluence, Miro',
+      ],
+    },
+    {
+      name: 'Domains',
       skills: [
         'Financial Services',
         'Retail',
         'Telecom',
-        'Data Governance',
-        'B2B SaaS',
-        'Enterprise Software',
+        'Manufacturing',
+        'Software / SaaS',
+        'Internal Tools & Platforms',
       ],
     },
   ],
@@ -157,31 +179,43 @@ Supported digital transformation for municipal services. Requirements gathering,
     {
       institution: 'Carnegie Mellon University',
       degree: 'Advanced Product Management Program',
-      period: '2025',
-      description: 'Intensive program covering discovery frameworks, roadmapping, experimentation, metrics, and product leadership for senior PM roles.',
+      period: '2025-2026',
+      description: 'Product discovery, metrics & growth, AI prototyping, leadership; Capstone Apr/May 2026',
     },
     {
-      institution: 'VibeCoding Lisboa',
-      degree: 'Product Community & Hands-On Building',
+      institution: 'VibeCoding Lisboa + Vibe Skills',
+      degree: 'Product Community & AI-Assisted Development',
       period: '2025',
-      description: 'Active in Lisbon\'s product and tech community. Currently building "Learn the Language You Live In" (LLYLI)—an AI-powered language learning app—as part of hands-on upskilling in end-to-end product development.',
+      description: 'Building LLYLI; completing Vibe Skills courses',
+    },
+    {
+      institution: 'Tilburg University',
+      degree: 'MSc Strategic Management',
+      period: '2013-2015',
+      description: 'Strategy, quantitative research methods, business consulting',
+    },
+    {
+      institution: 'Pontifícia Universidade Católica',
+      degree: 'Exchange Semester (Rio de Janeiro)',
+      period: '2014',
+      description: 'Business strategy, innovation, Portuguese',
     },
     {
       institution: 'Fontys University',
       degree: 'Bachelor of Commerce',
-      period: '2013 - 2017',
-      description: 'Focus on business analysis, project management, and organizational change. Graduated with honors in Strategic Management.',
+      period: '2008-2012',
+      description: 'Marketing, market research, behavioural economics',
     },
   ],
 
   languages: [
     { name: 'Dutch', level: 'Native', flag: '🇳🇱', progress: 100 },
     { name: 'English', level: 'Full Professional', flag: '🇬🇧', progress: 95 },
-    { name: 'Portuguese', level: 'Limited Working', flag: '🇵🇹', progress: 45 },
-    { name: 'German', level: 'Limited Working', flag: '🇩🇪', progress: 40 },
+    { name: 'Portuguese', level: 'Conversational (improving)', flag: '🇵🇹', progress: 50 },
+    { name: 'German', level: 'Working Proficiency', flag: '🇩🇪', progress: 45 },
   ],
 
-  beyondWork: `Board member and saxophonist in a Lisbon-based big band—handling everything from concert logistics to community building. I help my family's toy shop back in the Netherlands with digital marketing and inventory systems.
+  beyondWork: `Played saxophone and coordinated concerts as board member for Jazzalike Big Band Utrecht (2021–2025). Helped my family's toy shop in the Netherlands with digital marketing, making it the region's top searchable toy store online.
 
-Recently walked part of the Camino de Santiago (Portuguese route) before settling in Lisbon. Always up for live music, trail hiking, and conversations about how products actually get built (and adopted).`,
+Completed the Caminho Português before settling in Lisbon. Enjoy live music, hiking, and conversations about culture and world affairs.`,
 }

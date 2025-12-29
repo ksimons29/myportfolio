@@ -11,7 +11,6 @@ import BeyondWork from '@/components/BeyondWork'
 import LLYLIWidget from '@/components/LLYLIWidget'
 import ProfileCards from '@/components/ProfileCards'
 import AvailabilitySection from '@/components/AvailabilitySection'
-import ExperienceExamples from '@/components/ExperienceExamples'
 import { content } from '@/lib/content'
 
 export default function Home() {
@@ -25,29 +24,24 @@ export default function Home() {
         <AboutSection />
       </Section>
 
-      {/* 3. Profile Summary Cards - Clickable, link to Experience Examples */}
+      {/* 3. Capability Cards - Expandable with examples */}
       <ProfileCards />
 
-      {/* 4. Availability Section */}
-      <AvailabilitySection />
-
-      {/* 5. Experience Examples - Linked from Profile Cards */}
-      <ExperienceExamples />
-
-      {/* Projects Section (Current Work + Selected Outcomes) */}
+      {/* 4. Current Work (LLYLI) */}
       <Section id="projects" title="Current Work" className="bg-paper-warm">
         {content.currentWork.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </Section>
 
+      {/* 5. Selected Outcomes */}
       <Section id="outcomes" title="Selected Outcomes">
         {content.selectedOutcomes.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </Section>
 
-      {/* 3. Experience Section */}
+      {/* 6. Experience */}
       <Section id="experience" title="Experience" className="bg-paper-warm">
         <div className="mt-4">
           {content.experience.map((exp, index) => (
@@ -56,19 +50,19 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 6. Skills Section */}
+      {/* 7. Core Skills */}
       <Section id="skills" title="Core Skills">
         <SkillsGrid />
       </Section>
 
-      {/* 5. Education Section */}
+      {/* 8. Education & Upskilling */}
       <Section id="education" title="Education & Upskilling" className="bg-paper-warm">
         {content.education.map((edu, index) => (
           <EducationCard key={index} education={edu} />
         ))}
       </Section>
 
-      {/* Languages (bonus section) */}
+      {/* 9. Languages */}
       <Section id="languages" title="Languages">
         <div className="max-w-md">
           {content.languages.map((lang, index) => (
@@ -77,12 +71,15 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Beyond Work (bonus section) */}
+      {/* 10. Beyond Work */}
       <Section id="beyond-work" title="Beyond Work" className="bg-paper-warm">
         <BeyondWork />
       </Section>
 
-      {/* 7. Contact Section (Footer) */}
+      {/* 11. Open to Work */}
+      <AvailabilitySection />
+
+      {/* 12. Footer */}
       <Footer />
 
       {/* Floating LLYLI Widget */}

@@ -10,7 +10,7 @@ export default function Footer() {
           Let&apos;s Connect
         </h2>
         <p className="text-paper/80 mb-6 max-w-md mx-auto">
-          {site.location} — Open to consulting, flex projects, and interesting conversations.
+          Based in Lisbon. Open to PM roles, consulting, and coffee.
         </p>
 
         {/* Contact links */}

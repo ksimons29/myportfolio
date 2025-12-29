@@ -1,21 +1,18 @@
 const services = [
   {
-    title: 'Product Management & Strategy',
-    description:
-      'Full-time or interim PM/PO for teams building data products, AI tools, or internal platforms. I help teams get unstuck and ship products that work.',
+    title: 'Full-time or Interim PM',
+    description: 'Data products, AI tools, internal platforms',
     tag: 'Full-time or Interim',
   },
   {
-    title: 'Data & AI Product Consulting',
-    description:
-      'Product strategy, roadmap development, and success metrics for analytics and AI products. I bridge business needs and technical solutions.',
-    tag: 'Project-based or Retainer',
+    title: 'Project-based Consulting',
+    description: 'Product strategy, roadmaps, success metrics',
+    tag: 'Project-based',
   },
   {
-    title: 'Discovery & Scoping',
-    description:
-      'Turn unclear requests into shippable first releases. Combined interviews, workflow mapping, and maturity assessments to separate product problems from capability gaps.',
-    tag: '2-6 week engagements',
+    title: 'Discovery Sprints',
+    description: 'Turn unclear requests into shippable releases (2–6 weeks)',
+    tag: '2-6 weeks',
   },
 ]
 
@@ -29,8 +26,7 @@ export default function AvailabilitySection() {
             Open to Product Roles & Consulting
           </h2>
           <p className="font-body text-base sm:text-lg text-ink-muted max-w-2xl mx-auto">
-            Looking for Senior PM opportunities in Lisbon. Also available for consulting,
-            interim assignments, and project-based work.
+            Looking for Senior PM roles in Lisbon. Also available for consulting and interim work.
           </p>
         </div>
 

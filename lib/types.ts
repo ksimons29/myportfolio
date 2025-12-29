@@ -56,6 +56,14 @@ export interface Language {
   progress: number
 }
 
+// Capability card example structure
+export interface CapabilityExample {
+  company: string
+  project: string
+  description: string
+  metric: string
+}
+
 // Full content structure
 export interface PortfolioContent {
   site: SiteConfig

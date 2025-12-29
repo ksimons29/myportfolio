@@ -149,20 +149,20 @@ export default function BeyondWork() {
   return (
     <div className="prose prose-lg max-w-none text-ink-soft leading-relaxed">
       <p className="mb-5">
-        Board member and saxophonist
+        Played saxophone
         <InlineIcon><SaxophoneIcon className="w-5 h-5" /></InlineIcon>
-        in a Lisbon-based big band—handling everything from concert logistics to community building.
-        I also help my family&apos;s toy shop
+        and coordinated concerts as board member for Jazzalike Big Band Utrecht (2021–2025).
+        Helped my family&apos;s toy shop
         <InlineIcon><ToyIcon className="w-5 h-5" /></InlineIcon>
-        back in the Netherlands with digital marketing and inventory systems.
+        in the Netherlands with digital marketing, making it the region&apos;s top searchable toy store online.
       </p>
 
       <p className="mb-5">
-        Recently walked part of the Camino de Santiago
+        Completed the Caminho Português
         <InlineIcon><HikingIcon className="w-5 h-5" /></InlineIcon>
-        (Portuguese route) before settling in Lisbon. Always up for live music
+        before settling in Lisbon. Enjoy live music
         <InlineIcon><MusicIcon className="w-5 h-5" /></InlineIcon>
-        , trail hiking, and conversations about how products actually get built (and adopted).
+        , hiking, and conversations about culture and world affairs.
       </p>
     </div>
   )
