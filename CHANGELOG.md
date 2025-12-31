@@ -1,18 +1,100 @@
+# Changelog
+
+All notable changes to the portfolio website.
+
+---
+
+## 2025-12-31 - Footer WhatsApp Button & AvailabilitySection Cleanup
+
+**Summary:** Added WhatsApp contact button to Footer and removed CTA text/icons from AvailabilitySection.
+
+**Changes:**
+- Added WhatsApp button to Footer (next to Email Me and LinkedIn)
+- Removed "Interested? Let's discuss your needs or schedule a call." text from AvailabilitySection
+- Removed standalone email icon from AvailabilitySection
+
+**Files Changed:**
+- components/Footer.tsx
+- components/AvailabilitySection.tsx
+
+**How to Verify:**
+1. Scroll to Footer - should see 3 buttons: Email Me, LinkedIn, WhatsApp
+2. Check AvailabilitySection has no CTA text or icons below service cards
+
+---
+
 ## 2025-12-31 - Updated About and Experience Copy
 
 **Summary:** Revised About section and Cognizant experience description for clarity and impact.
+
+**Changes:**
+- About: New paragraph emphasizing decade at Cognizant, adoption focus, regulated environments
+- Experience: Replaced markdown table with bullet-point format including metrics inline
+- Experience: Added "Promoted into a Consulting Manager role" language
 
 **Files Changed:**
 - lib/content.ts
 
 **How to Verify:**
-1. Run: npm run dev
-2. Visit http://localhost:3000
-3. Check About section has new opening paragraph
-4. Scroll to Experience and verify Cognizant description updated
+1. Check About section has "I turn complex problems into products people actually use..."
+2. Scroll to Experience and verify Cognizant description uses bullet format with metrics
 
-**Rollback:**
+---
+
+## 2025-12-31 - Improved Card Visibility and Clickability
+
+**Summary:** Enhanced ProfileCards for better visual presence and clearer interaction affordance.
+
+**Changes:**
+- Increased icon size from 32x32 to 40x40px
+- Enlarged icon container from 56px (w-14) to 64px (w-16)
+- Strengthened icon background opacity (gold/10 → gold/15)
+- Made "See examples" text always visible (70% opacity, 100% on hover)
+- Strengthened card borders from 1px muted to 2px gold/20
+- Enhanced hover states with gold/40 border
+
+**Files Changed:**
+- components/ProfileCards.tsx
+
+**How to Verify:**
+1. Check capability cards have larger icons with gold-tinted background
+2. "See examples" should be visible without hovering
+3. Cards should have visible gold-tinted borders
+
+---
+
+## 2025-12-31 - Portfolio Structure and Content Revision (v2)
+
+**Summary:** Major content restructure per v2 specification.
+
+**Changes:**
+- Updated site title to "Senior Product Manager"
+- Rewrote About section with brand mentions (Nike, Rabobank, KPN)
+- Transformed ProfileCards to accordion with expandable examples
+- Reordered page sections (moved AvailabilitySection to position 10)
+- Deleted ExperienceExamples component
+- Updated AvailabilitySection service titles and subheading
+- Updated BeyondWork text (Utrecht instead of Lisbon, Caminho Português)
+- Updated Footer tagline
+
+**Files Changed:**
+- lib/types.ts
+- lib/content.ts
+- components/ProfileCards.tsx
+- components/AvailabilitySection.tsx
+- components/BeyondWork.tsx
+- components/Footer.tsx
+- app/page.tsx
+- Deleted: components/ExperienceExamples.tsx
+
+---
+
+## Rollback Instructions
+
+To revert any change:
 ```bash
-git revert HEAD
+git log --oneline -10  # Find the commit to revert to
+git revert <commit-hash>
 git push origin main
+npx vercel --prod --yes --force
 ```
