@@ -115,27 +115,27 @@ export default function ProfileCards() {
               <button
                 onClick={() => toggleCard(index)}
                 className={`group relative bg-white rounded-xl p-6 lg:p-8
-                           border border-border-muted
+                           border-2 border-gold/20
                            shadow-soft hover:shadow-medium
                            transition-all duration-300 ease-out
-                           hover:border-gold/30 hover:-translate-y-1
+                           hover:border-gold/40 hover:-translate-y-1
                            cursor-pointer text-left w-full
-                           ${expandedIndex === index ? 'border-gold/40 shadow-medium' : ''}`}
+                           ${expandedIndex === index ? 'border-gold/50 shadow-medium' : ''}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Icon container with subtle background */}
                 <div className="mb-5 inline-flex items-center justify-center
-                                w-14 h-14 rounded-xl
-                                bg-gradient-to-br from-gold/10 to-terracotta/10
-                                border border-gold/20
-                                group-hover:from-gold/20 group-hover:to-terracotta/20
+                                w-16 h-16 rounded-xl
+                                bg-gradient-to-br from-gold/15 to-terracotta/15
+                                border border-gold/30
+                                group-hover:from-gold/25 group-hover:to-terracotta/25
                                 transition-all duration-300">
                   <Image
                     src={card.icon}
                     alt=""
-                    width={32}
-                    height={32}
-                    className="text-ink opacity-80 group-hover:opacity-100 transition-opacity"
+                    width={40}
+                    height={40}
+                    className="text-ink opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
 
@@ -150,10 +150,10 @@ export default function ProfileCards() {
                   {card.description}
                 </p>
 
-                {/* See examples indicator */}
+                {/* See examples indicator - always visible for clear affordance */}
                 <div className={`flex items-center gap-1 text-sm text-gold font-medium
-                                transition-opacity duration-300
-                                ${expandedIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                                transition-all duration-300
+                                ${expandedIndex === index ? 'opacity-100' : 'opacity-70 group-hover:opacity-100'}`}>
                   <span>{expandedIndex === index ? 'Hide examples' : 'See examples'}</span>
                   <svg
                     className={`w-4 h-4 transform transition-transform duration-300
