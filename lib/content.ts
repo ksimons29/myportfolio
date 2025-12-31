@@ -16,9 +16,9 @@ export const content: PortfolioContent = {
 
   about: `**6 years in product roles. 10 years turning complex problems into simple products.**
 
-I run structured discovery, define clear outcomes, and ship in focused increments. Built across retail (Nike), finance (Rabobank), and telecom (KPN) — from analytics platforms serving 2,000+ users to GenAI assistants with ~95% answer accuracy.
+I turn complex problems into products people actually use. Spent a decade at Cognizant delivering across retail, banking, and telecom, leading discovery, aligning stakeholders, and shipping in regulated, data-driven environments. Proven ability to get products adopted across business and technical teams.
 
-Completing Carnegie Mellon's Advanced PM Program. Building LLYLI, an AI language learning app. Based in Lisbon.`,
+Based in Lisbon. Currently completing Carnegie Mellon's Advanced Product Management Program and building LLYLI, a language learning app.`,
 
   currentWork: [
     {
@@ -100,19 +100,16 @@ Fragmented data governance causing compliance gaps, slow approvals, and frustrat
       role: 'Product Manager (via Cognizant)',
       period: '2016 - Oct. 2025',
       link: 'https://cognizant.com',
-      description: `Partner to clients in banking, retail, telecom, and manufacturing where technology, data, and people meet. Grew from BI/analytics consultant to consulting manager acting as in-house Product Manager for internal platforms and AI-assisted tools. Led cross-functional teams from discovery to rollout.
+      description: `Partnered with clients in banking, retail, telecom, and manufacturing where technology, data, and people meet. Promoted into a Consulting Manager role while staying hands-on as an embedded Product Manager for internal platforms and AI-assisted tools. Led discovery to rollout, coached analysts, and supported go-to-market with senior stakeholders, with a focus on adoption and measurable outcomes.
 
-**Client Projects:**
+Selected client work:
+- Rabobank, Product Manager (2024 to Jul 2025): RAG-based GenAI assistant for policy and security rules (95% answer accuracy, 4+ hours saved per user per month)
+- Nike EMEA, Product Manager (2022 to Jul 2024): EMEA insights and analytics platform (2,000+ users, 35% adoption growth, 40% better reporting consistency)
+- Marel, Product Owner and Project Manager (2019 to 2021): enterprise data platform (maturity assessment, team onboarding, Informatica IICS setup, 50% faster incident resolution)
+- KPN B2B, Business Analyst and Project Manager (2017 to 2019): self-service BI and KPI reporting (BI tool evaluation, KPI standardisation, 30% less reporting time)
+- Teva EMEA, Business Analyst (2016 to 2017): predictive analytics dashboard for out-of-stock risk (25% fewer out-of-stocks)
 
-| Client | Role | Dates | Product |
-|--------|------|-------|---------|
-| Rabobank | Product Manager | 2024 – Aug. 2025 | RAG-based GenAI assistant for policy and security rules |
-| Nike EMEA | Product Manager | 2022 – Jul. 2024 | EMEA insights and analytics platform (2,000+ users) |
-| Marel | Product Owner & Project Manager | 2019–2021 | Enterprise data platform; led maturity assessment, team onboarding, and Informatica IICS setup |
-| KPN | Product Owner | 2017–2019 | Self-service BI and KPI reporting for B2B telecom |
-| Teva EMEA | Business Analyst | 2016–2017 | Predictive analytics dashboard for out-of-stock risk |
-
-**Cognizant Internal:**
+Cognizant internal:
 - Co-founded the internal Data Management Club and led Benelux data events with 200+ participants
 - Facilitated cross-European learning on product, governance, and change
 - Started as trainee at Qlik, building foundation in BI and analytics software`,
