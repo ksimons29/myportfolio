@@ -200,20 +200,20 @@ export default function ProfileCards() {
                         className={`p-4 rounded-lg bg-paper-warm/50 border border-border-muted/50
                                    ${exIndex !== card.examples.length - 1 ? 'border-b border-border-muted/30' : ''}`}
                       >
-                        <div className="flex items-start justify-between gap-4 mb-2">
-                          <div>
-                            <span className="text-xs font-medium text-gold uppercase tracking-wide">
-                              {example.company}
-                            </span>
-                            <h4 className="font-display text-base lg:text-lg font-medium text-ink mt-1">
-                              {example.project}
-                            </h4>
-                          </div>
+                        {/* Header: Company + Metric badge */}
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
+                          <span className="text-xs font-medium text-gold uppercase tracking-wide">
+                            {example.company}
+                          </span>
                           <span className="text-xs font-medium text-terracotta bg-terracotta/10
-                                         px-2 py-1 rounded-full sm:whitespace-nowrap">
+                                         px-2 py-1 rounded-full">
                             {example.metric}
                           </span>
                         </div>
+                        {/* Project title - full width */}
+                        <h4 className="font-display text-base lg:text-lg font-medium text-ink mb-2">
+                          {example.project}
+                        </h4>
                         <p className="text-sm text-ink-muted leading-relaxed">
                           {example.description}
                         </p>
