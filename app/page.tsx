@@ -22,6 +22,15 @@ export default function Home() {
       {/* 2. About Section */}
       <Section id="about" title="About">
         <AboutSection />
+        {/* Mobile scroll hint */}
+        <div className="mt-6 flex justify-center md:hidden">
+          <div className="flex items-center gap-2 text-ink-muted/50 text-sm">
+            <span>See my strengths</span>
+            <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
       </Section>
 
       {/* 3. Capability Cards - Expandable with examples */}
