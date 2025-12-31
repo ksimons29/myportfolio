@@ -4,6 +4,30 @@ All notable changes to the portfolio website.
 
 ---
 
+## 2025-12-31 - Mobile Card Visibility & Layout Fix
+
+**Summary:** Improved capability cards visibility on mobile and fixed expanded card text overlap.
+
+**Changes:**
+- Added "What I Bring" section header above capability cards
+- Added mobile-only scroll indicator in About section (hidden on desktop)
+- Reduced section padding globally for better mobile viewport fit
+- Restructured expanded card layout: metric badges now sit beside company name, giving project title full width
+- Metric badges can now wrap on very small screens
+
+**Files Changed:**
+- components/ProfileCards.tsx
+- components/Section.tsx
+- app/page.tsx
+
+**How to Verify:**
+1. Open site on mobile (or Chrome DevTools mobile view)
+2. "What I Bring" header should be visible without scrolling
+3. Scroll indicator with bouncing arrow appears on mobile only
+4. Tap a capability card - text should not overlap, metrics display cleanly
+
+---
+
 ## 2025-12-31 - Footer WhatsApp Button & AvailabilitySection Cleanup
 
 **Summary:** Added WhatsApp contact button to Footer and removed CTA text/icons from AvailabilitySection.

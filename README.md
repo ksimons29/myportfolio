@@ -53,17 +53,19 @@ my-portfolio/
 │   ├── page.tsx        # Main portfolio page
 │   └── globals.css     # Global styles and Tailwind theme
 ├── components/
-│   ├── Header.tsx      # Hero section
-│   ├── Footer.tsx      # Contact section
-│   ├── Section.tsx     # Reusable section wrapper
+│   ├── Header.tsx          # Hero section
+│   ├── Footer.tsx          # Contact section
+│   ├── Section.tsx         # Reusable section wrapper
 │   ├── AboutSection.tsx
+│   ├── ProfileCards.tsx    # Expandable capability cards
 │   ├── ProjectCard.tsx
 │   ├── ExperienceCard.tsx
 │   ├── SkillsGrid.tsx
 │   ├── EducationCard.tsx
 │   ├── LanguageBar.tsx
+│   ├── AvailabilitySection.tsx  # "Open to work" CTA
 │   ├── BeyondWork.tsx
-│   └── LLYLIWidget.tsx # Floating CTA
+│   └── LLYLIWidget.tsx     # Floating CTA
 ├── lib/
 │   ├── types.ts        # TypeScript interfaces
 │   └── content.ts      # All site content
