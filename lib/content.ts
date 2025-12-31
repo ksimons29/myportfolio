@@ -174,34 +174,34 @@ Cognizant internal:
 
   education: [
     {
-      institution: 'Carnegie Mellon University',
-      degree: 'Advanced Product Management Program',
+      institution: 'Carnegie Mellon University (CMU Portugal Academy)',
+      degree: 'Product Management Advanced Program',
       period: '2025-2026',
-      description: 'Product discovery, metrics & growth, AI prototyping, leadership; Capstone Apr/May 2026',
+      description: 'Part-time advanced program covering Product Discovery, Metrics & Growth, AI Prototyping, Leadership and Delivery. Capstone project Apr/May 2026.',
     },
     {
-      institution: 'VibeCoding Lisboa + Vibe Skills',
-      degree: 'Product Community & AI-Assisted Development',
+      institution: 'Anthropic',
+      degree: 'AI Fluency & Claude Certifications',
       period: '2025',
-      description: 'Building LLYLI; completing Vibe Skills courses',
+      description: 'AI Fluency: Framework & Foundations, Claude Code in Action. Practical training on LLM capabilities, prompt engineering, and AI-assisted development.',
     },
     {
       institution: 'Tilburg University',
-      degree: 'MSc Strategic Management',
+      degree: 'Master of Science in Strategic Management',
       period: '2013-2015',
-      description: 'Strategy, quantitative research methods, business consulting',
+      description: 'Strategic Management, Quantitative Research Methods, Finance, and Business Consulting. Dissertation: "The Effect of an Economic Crisis on the Export Strategy of a Firm". Active member at study association Asset | Strategy & Logistics.',
     },
     {
-      institution: 'Pontifícia Universidade Católica',
-      degree: 'Exchange Semester (Rio de Janeiro)',
+      institution: 'Pontifícia Universidade Católica (PUC-Rio)',
+      degree: 'Exchange Semester in Business Administration',
       period: '2014',
-      description: 'Business strategy, innovation, Portuguese',
+      description: 'Business Strategy, Innovation, and Portuguese language. Study abroad semester in Rio de Janeiro, Brazil.',
     },
     {
-      institution: 'Fontys University',
+      institution: 'Fontys University of Applied Sciences',
       degree: 'Bachelor of Commerce',
       period: '2008-2012',
-      description: 'Marketing, market research, behavioural economics',
+      description: 'Marketing, Market Research, Behavioural Economics. Foundation in commercial strategy and consumer insights.',
     },
   ],
 
