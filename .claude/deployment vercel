@@ -1,0 +1,87 @@
+# Fix Vercel build failure and trigger a new deployment
+
+## Context
+Vercel production did not update because the build failed.
+
+Error from Vercel logs:
+Type error: Property "metric" is missing in type "{ company: string; project: string; description: string; }" but required in type "Example".
+Command "npm run build" exited with 1.
+
+## Goal
+1. Fix the TypeScript type error so `npm run build` succeeds.
+2. Commit and push to `main` to trigger a new Vercel production deployment.
+3. Confirm the new deployment is successful.
+
+## What to change
+There is a TypeScript type called `Example` that requires a `metric` field.
+At least one object in an `examples` array is missing `metric`.
+
+Preferred fix:
+Add `metric: "..."` to every `Example` object that is missing it.
+
+Fallback fix:
+Make `metric` optional in the `Example` type if we do not want it required.
+
+## Steps for Claude Code
+
+### 1. Find the failing example object
+Search the codebase for one of these strings:
+"Major Dutch Bank"
+"GenAI Knowledge Assistant"
+or search for `examples:` near the section shown in the logs.
+
+Add a `metric` property to the object. Use a value already present in the description so we do not invent anything.
+
+Example safe values pulled from the existing description:
+"~95% answer accuracy"
+"20+ security advisors"
+"Delivered v1 in ~12 months"
+
+Pick one and add it as `metric`.
+
+### 2. Find and check the `Example` type
+Search for `type Example` or `interface Example`.
+
+Confirm it looks roughly like this:
+company: string
+project: string
+description: string
+metric: string
+
+Now ensure every place that creates an `Example` includes `metric`.
+
+If multiple example objects exist, add `metric` to all missing ones.
+
+If we decide to use the fallback, change:
+metric: string
+to:
+metric?: string
+
+Only use this fallback if adding `metric` everywhere is undesirable.
+
+### 3. Run local build checks
+From the repo root, run:
+1. `npm install`
+2. `npm run build`
+
+If there is a lint script, also run:
+`npm run lint`
+
+The build must pass locally.
+
+### 4. Commit and push to trigger Vercel deployment
+Run:
+1. `git status`
+2. `git add -A`
+3. `git commit -m "Fix build: add missing metric to examples"`
+4. `git push origin main`
+
+Pushing to `main` triggers a new Vercel production deployment automatically.
+
+### 5. Verify deployment
+After push:
+1. Open Vercel project dashboard
+2. Check Deployments
+3. Confirm the latest production deployment is successful and is on the newest commit
+
+If it still fails, copy the new error section from Vercel logs and repeat the same process.
