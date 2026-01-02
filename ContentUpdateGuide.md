@@ -1,364 +1,442 @@
 # Portfolio Website - Content Update Guide
 
-**For non-technical users** | Last updated: December 2024
+**For content updates** | Last updated: January 2025
 
-This guide shows you how to update your portfolio content without knowing code. All changes happen in one file.
-
----
-
-## 📁 Where to Find the Content File
-
-**File location:**
-```
-/data/content.yaml
-```
-
-**Full path from project root:**
-```
-your-portfolio/
-├── data/
-│   └── content.yaml  ← Edit this file
-├── src/
-├── public/
-└── ...
-```
-
-**How to edit:**
-1. Open the file in any text editor (VS Code, TextEdit, Notepad)
-2. Make your changes (see examples below)
-3. Save the file
-4. Push to GitHub (changes will auto-deploy to website)
+This guide shows you where to update content for each section of your portfolio website.
 
 ---
 
-## ✏️ Common Updates
+## Quick Reference
 
-### 1. Add New Work Experience
-
-**Location in file:** Look for `experience:` section
-
-**Format:**
-```yaml
-experience:
-  - company: "Company Name"
-    role: "Your Role"
-    duration: "Jan 2024 - Present"
-    location: "City, Country"
-    achievements:
-      - "Achievement 1 with metric or outcome"
-      - "Achievement 2 with metric or outcome"
-      - "Achievement 3 with metric or outcome"
-```
-
-**Example:**
-```yaml
-experience:
-  - company: "Nike"
-    role: "Senior Product Manager"
-    duration: "Jan 2023 - Dec 2024"
-    location: "Lisbon, Portugal"
-    achievements:
-      - "Shipped GenAI knowledge synthesis tool, 70% team adoption in Q1"
-      - "Led cross-functional team of 8 engineers and 2 designers"
-      - "Reduced product discovery time from 6 weeks to 2 weeks"
-```
-
-**To add a new job:**
-1. Copy the entire block (from `- company:` to last achievement)
-2. Paste it above or below existing entries
-3. Update all the text with your new information
-4. Keep the same spacing and `-` symbols
+| Section | File to Edit |
+|---------|--------------|
+| Name, title, email, socials | `lib/content.ts` → `site` |
+| About text | `lib/content.ts` → `about` |
+| "What I Bring" cards | `components/ProfileCards.tsx` |
+| Current Work (LLYLI) | `lib/content.ts` → `currentWork` |
+| Selected Outcomes | `lib/content.ts` → `selectedOutcomes` |
+| Experience | `lib/content.ts` → `experience` |
+| Skills | `lib/content.ts` → `skills` |
+| Education | `lib/content.ts` → `education` |
+| Languages | `lib/content.ts` → `languages` |
+| Beyond Work | `components/BeyondWork.tsx` |
+| Availability/Services | `components/AvailabilitySection.tsx` |
+| Footer tagline | `components/Footer.tsx` |
+| LLYLI Widget | `components/LLYLIWidget.tsx` |
+| Profile photo | `public/images/profile.jpg` |
 
 ---
 
-### 2. Update Skills
+## Folder Structure
 
-**Location in file:** Look for `skills:` section
-
-**Format:**
-```yaml
-skills:
-  core:
-    - "Product Strategy"
-    - "Roadmap Development"
-    - "Stakeholder Management"
-  
-  technical:
-    - "SQL"
-    - "Python"
-    - "Data Analysis"
-  
-  domain:
-    - "AI/ML Products"
-    - "Data Governance"
-    - "Analytics Platforms"
 ```
-
-**To add a skill:**
-1. Find the right category (core, technical, or domain)
-2. Add a new line with `- "Your New Skill"`
-3. Keep the quotes and the `-` symbol
-
-**To remove a skill:**
-1. Delete the entire line
+my-portfolio/
+├── lib/
+│   └── content.ts          ← MAIN CONTENT FILE (most sections)
+│
+├── components/
+│   ├── ProfileCards.tsx    ← "What I Bring" cards + examples
+│   ├── AvailabilitySection.tsx ← Services/availability
+│   ├── BeyondWork.tsx      ← Beyond Work section
+│   ├── Footer.tsx          ← Footer tagline
+│   └── LLYLIWidget.tsx     ← Floating widget
+│
+└── public/
+    └── images/
+        ├── profile.jpg     ← Your profile photo
+        ├── discovery.svg   ← Card icons
+        ├── data.svg
+        ├── collaboration.svg
+        └── llyli-widget.png
+```
 
 ---
 
-### 3. Update the 3 Profile Cards
+## Detailed Section Guide
 
-**Location in file:** Look for `profile_cards:` section
+### 1. Hero / Header (Name, Title, Socials)
 
-**Current cards:**
-```yaml
-profile_cards:
-  - id: "discovery"
-    title: "Discovery to Release"
-    icon: "discovery.svg"
-    description: "Your description here..."
-  
-  - id: "data-ai"
-    title: "Data and AI Products with Clear Success Criteria"
-    icon: "data.svg"
-    description: "Your description here..."
-  
-  - id: "delivery"
-    title: "Delivery and Stakeholder Leadership"
-    icon: "collaboration.svg"
-    description: "Your description here..."
+**File:** `lib/content.ts`
+**Location:** Lines 4-15, the `site` object
+
+```typescript
+site: {
+  name: 'Koos Simons',
+  title: 'Senior Product Manager',
+  email: 'koossimons91@gmail.com',
+  description: 'Senior Product Manager based in Lisbon...',
+  location: 'Lisbon, Portugal',
+  socials: {
+    linkedin: 'koossimons',      // Just the username
+    github: 'ksimons29',          // Just the username
+    whatsapp: '+351123456789',    // Full phone number
+  },
+},
 ```
 
 **To update:**
-1. Change the `title:` text (keep the quotes)
-2. Change the `description:` text (keep the quotes)
-3. Don't change the `id:` - these are used for linking (see Section 4)
+- Change any value between the quotes
+- For socials, use just the username (not full URLs)
 
 ---
 
-### 4. Link Cards to Experience Examples
+### 2. About Section
 
-**This creates clickable cards that scroll to relevant work examples**
+**File:** `lib/content.ts`
+**Location:** Lines 17-21, the `about` string
 
-#### Step 1: Give your experience examples an ID
+```typescript
+about: `**6 years in product roles. 10 years turning complex problems into simple products.**
 
-**Location:** Find the experience you want to link to
-
-**Add this line above the experience:**
-```yaml
-experience_examples:
-  discovery_examples:  # ← This is the ID
-    - company: "Nike"
-      role: "Product Manager"
-      outcome: "Shipped MVP in 3 months, 70% adoption"
-      category: "discovery"  # ← Matches card ID
+I turn complex problems into products people actually use...`,
 ```
 
-#### Step 2: Match the category to card ID
-
-Make sure each experience has a `category:` that matches one of your card IDs:
-- `discovery` → Links to "Discovery to Release" card
-- `data-ai` → Links to "Data and AI Products" card  
-- `delivery` → Links to "Delivery and Stakeholder Leadership" card
-
-**Complete example:**
-```yaml
-experience_examples:
-  - company: "Nike"
-    role: "Senior PM - GenAI Tools"
-    outcome: "Shipped knowledge synthesis tool, 70% team adoption in Q1"
-    category: "discovery"  # ← This experience shows up when clicking "Discovery" card
-    
-  - company: "Rabobank"
-    role: "Product Owner - Data Platform"
-    outcome: "Reduced data quality issues by 40% through governance framework"
-    category: "data-ai"  # ← This shows up for "Data & AI" card
-    
-  - company: "KPN"
-    role: "Product Manager - Analytics"
-    outcome: "Aligned 5 stakeholder groups, shipped in focused 2-week sprints"
-    category: "delivery"  # ← This shows up for "Delivery" card
-```
-
-**How it works:**
-1. User clicks "Discovery to Release" card
-2. Page scrolls to all experiences with `category: "discovery"`
-3. User sees relevant examples
+**Formatting:**
+- Use `**text**` for bold
+- Use backticks `` ` `` for the multi-line string
+- Line breaks are preserved
 
 ---
 
-### 5. Update About Section
+### 3. "What I Bring" Cards (Capability Cards)
 
-**Location in file:** Look for `about:` section
+**File:** `components/ProfileCards.tsx`
+**Location:** Lines 20-98, the `cards` array
 
-```yaml
-about:
-  headline: "6 years shipping products, 3+ years in strategy & consulting"
-  description: |
-    I structure messy problems into products people actually use. 
-    Built across retail, finance, and manufacturing, leading with 
-    real usage and outcomes that prove things work.
-  
-  current_focus: "Currently building LLYLI, a language learning app"
-  location: "Based in Lisbon"
+```typescript
+const cards: Card[] = [
+  {
+    icon: '/images/discovery.svg',
+    title: 'From Ambiguity to First Release',
+    description: 'Turn unclear requests into scoped MVPs...',
+    examples: [
+      {
+        company: 'Major Dutch Bank',
+        project: 'GenAI Knowledge Assistant',
+        description: 'Ran workshops with 20+ security advisors...',
+        metric: '~95% answer accuracy',  // ← Shows as badge in header!
+      },
+      // ... more examples
+    ],
+  },
+  // ... more cards
+]
 ```
 
-**To update:**
-- Change any text between the quotes
-- The `|` symbol after `description:` means multi-line text
-- Keep the same indentation (spacing)
+**Important:** Every example MUST have a `metric` field or the build will fail.
+
+#### How the Metric Badge Works
+
+When you expand a card, each example shows a header with:
+```
+[COMPANY NAME]  [METRIC BADGE]
+Project Title
+Description text...
+```
+
+The `metric` field becomes the **colored badge** next to the company name.
+
+**Example metrics currently in use:**
+| Card | Company | Metric |
+|------|---------|--------|
+| Card 1 | Major Dutch Bank | `~95% answer accuracy` |
+| Card 1 | Nike EMEA | `120+ users self-serving in 6 months` |
+| Card 1 | Marel | `Incident resolution time cut by ~50%` |
+| Card 2 | Rabobank | `~95% answer accuracy achieved` |
+| Card 2 | Nike EMEA | `Quality scores: 60% → 85%` |
+| Card 2 | KPN | `Reporting time reduced ~30%` |
+| Card 3 | Rabobank | `Governance model adopted bank-wide` |
+| Card 3 | Nike EMEA | `Adoption +60%, ramp-up time -25%` |
+| Card 3 | Marel | `Incident resolution -50%` |
+
+**Tips for good metrics:**
+- Keep them short (fits in a badge)
+- Include numbers when possible (`~95%`, `+60%`, `50%`)
+- Use arrows for change (`60% → 85%`)
+- Focus on outcomes, not activities
+
+**To change a metric:**
+1. Open `components/ProfileCards.tsx`
+2. Find the example you want to update (search for company name)
+3. Change the `metric: '...'` value
+4. Save and rebuild
+
+**To add a new example:**
+1. Copy an existing example block
+2. Paste it inside the `examples: [...]` array
+3. Update all four fields: `company`, `project`, `description`, `metric`
 
 ---
 
-### 6. Update Contact Information
+### 4. Current Work
 
-**Location in file:** Look for `contact:` section
+**File:** `lib/content.ts`
+**Location:** Lines 23-36, `currentWork` array
 
-```yaml
-contact:
-  email: "your.email@example.com"
-  linkedin: "https://linkedin.com/in/yourprofile"
-  github: "https://github.com/yourusername"
-  whatsapp: "https://wa.me/yourphonenumber"
-  location: "Lisbon, Portugal"
+```typescript
+currentWork: [
+  {
+    title: 'Learn the Language You Live In (LLYLI)',
+    subtitle: 'VibeCoding Lisboa',
+    caption: '2025 - Present',
+    link: 'https://github.com/ksimons29',
+    quote: 'An AI-powered app that captures words...',
+    description: `Full description here with Markdown support...`,
+  },
+],
 ```
-
-**To update:**
-1. Replace the URL or email
-2. Keep the quotes
-3. For WhatsApp: use format `https://wa.me/351912345678` (country code + number, no spaces)
 
 ---
 
-## 🚨 Important Rules
+### 5. Selected Outcomes
 
-### DO:
-✅ Keep the same spacing/indentation (usually 2 spaces)
-✅ Keep all `-` symbols at the start of list items
-✅ Keep all quotes around text `"like this"`
-✅ Use the `|` symbol for multi-line text
-✅ Save the file after changes
+**File:** `lib/content.ts`
+**Location:** Lines 38-95, `selectedOutcomes` array
 
-### DON'T:
-❌ Remove the `-` symbols
-❌ Change the indentation randomly
-❌ Remove quotes from text
-❌ Change the `id:` values (used for linking)
-❌ Mix tabs and spaces (use spaces only)
+```typescript
+selectedOutcomes: [
+  {
+    title: 'GenAI Knowledge Assistant',
+    subtitle: 'B2B Internal Product | Financial Services',
+    caption: '2024-2025',
+    description: `**Challenge:**
+Risk and IT teams wasting hours...
+
+**What I Did:**
+- Led discovery (40+ interviews...)
+
+**Impact:**
+- ~95% answer accuracy`,
+  },
+],
+```
+
+**Formatting:** Supports Markdown with `**bold**`, `-` lists, and line breaks.
 
 ---
 
-## 📂 Folder Structure Reference
+### 6. Experience
 
+**File:** `lib/content.ts`
+**Location:** Lines 97-117, `experience` array
+
+```typescript
+experience: [
+  {
+    company: 'Cognizant',
+    role: 'Product Manager (via Cognizant)',
+    period: '2016 - Oct. 2025',
+    link: 'https://cognizant.com',
+    description: `Partnered with clients in banking, retail...
+
+Selected client work:
+- Rabobank, Product Manager (2024 to Jul 2025): RAG-based GenAI assistant...`,
+  },
+],
 ```
-your-portfolio/
-├── data/
-│   └── content.yaml          ← UPDATE THIS for all content changes
-│
-├── public/
-│   └── assets/
-│       └── images/
-│           ├── discovery.svg  ← Card icons (don't change unless replacing)
-│           ├── data.svg
-│           ├── collaboration.svg
-│           └── profile.jpg    ← Your profile photo
-│
-├── src/
-│   ├── app/                   ← Don't edit (code files)
-│   ├── components/            ← Don't edit (code files)
-│   └── ...
-│
-└── README.md                  ← Project documentation
-```
-
-**Files you can edit:**
-- `/data/content.yaml` - All website content
-- `/public/assets/images/profile.jpg` - Your profile photo
-
-**Files you shouldn't edit:**
-- Anything in `/src/` (code files)
-- `package.json`, `tsconfig.json`, etc. (config files)
 
 ---
 
-## 🔄 How to Deploy Changes
+### 7. Core Skills
 
-### Option 1: GitHub Web Interface (Easiest)
-1. Go to your repository on GitHub.com
-2. Navigate to `data/content.yaml`
-3. Click the pencil icon (Edit)
-4. Make your changes
-5. Scroll down, add a commit message like "Updated work experience"
-6. Click "Commit changes"
-7. Wait 2-3 minutes - changes automatically deploy to your website
+**File:** `lib/content.ts`
+**Location:** Lines 119-173, `skills` array
 
-### Option 2: Local Editing (If you use VS Code)
-1. Open the project in VS Code
-2. Edit `data/content.yaml`
-3. Save the file
-4. Open Terminal in VS Code
-5. Run these commands:
+```typescript
+skills: [
+  {
+    name: 'Product',           // Category name
+    skills: [                   // List of skills in category
+      'Product Discovery & Problem Framing',
+      'Outcome-based Roadmapping',
+      // ...
+    ],
+  },
+  {
+    name: 'AI & Automation',
+    skills: ['Prompt engineering & evaluation', ...],
+  },
+],
+```
+
+**To add a skill:** Add a new string to the `skills` array within a category.
+**To add a category:** Add a new object with `name` and `skills` array.
+
+---
+
+### 8. Education
+
+**File:** `lib/content.ts`
+**Location:** Lines 175-206, `education` array
+
+```typescript
+education: [
+  {
+    institution: 'Carnegie Mellon University (CMU Portugal Academy)',
+    degree: 'Product Management Advanced Program',
+    period: '2025-2026',
+    description: 'Part-time advanced program covering...',
+  },
+],
+```
+
+---
+
+### 9. Languages
+
+**File:** `lib/content.ts`
+**Location:** Lines 208-213, `languages` array
+
+```typescript
+languages: [
+  { name: 'Dutch', level: 'Native', flag: '🇳🇱', progress: 100 },
+  { name: 'English', level: 'Full Professional', flag: '🇬🇧', progress: 95 },
+  { name: 'Portuguese', level: 'Conversational (improving)', flag: '🇵🇹', progress: 50 },
+  { name: 'German', level: 'Working Proficiency', flag: '🇩🇪', progress: 45 },
+],
+```
+
+- `progress`: 0-100 (shown as bar width)
+- `flag`: Use emoji flags
+
+---
+
+### 10. Beyond Work
+
+**File:** `components/BeyondWork.tsx`
+**Location:** Lines 148-169
+
+This section has **hardcoded JSX** with inline icons. Edit the paragraph text directly:
+
+```tsx
+<p className="mb-5">
+  Played saxophone
+  <InlineIcon><SaxophoneIcon className="w-5 h-5" /></InlineIcon>
+  and coordinated concerts as board member for Jazzalike Big Band Utrecht (2021–2025).
+  ...
+</p>
+```
+
+Note: There's an unused `beyondWork` string in `lib/content.ts` that isn't connected to the component.
+
+---
+
+### 11. Availability / Services
+
+**File:** `components/AvailabilitySection.tsx`
+**Location:** Lines 1-17
+
+```typescript
+const services = [
+  {
+    title: 'Full-time or Interim PM',
+    description: 'Data products, AI tools, internal platforms',
+    tag: 'Full-time or Interim',
+  },
+  // ... more services
+]
+```
+
+Also update the header text on lines 25-29 in the JSX.
+
+---
+
+### 12. Footer Tagline
+
+**File:** `components/Footer.tsx`
+**Location:** Line 13
+
+```tsx
+<p className="text-paper/80 mb-6 max-w-md mx-auto">
+  Based in Lisbon. Open to PM roles, consulting, and coffee.
+</p>
+```
+
+---
+
+### 13. LLYLI Floating Widget
+
+**File:** `components/LLYLIWidget.tsx`
+
+| What to change | Location |
+|----------------|----------|
+| Survey/form link | Line 11: `href="https://tally.so/r/jaaBzJ"` |
+| Tooltip text | Line 27: `"Help with my language learning research!"` |
+| Widget image | Replace `public/images/llyli-widget.png` |
+
+---
+
+## How to Deploy Changes
+
+### Option 1: Using Claude Code (Recommended)
+1. Tell Claude what you want to change
+2. Claude will edit the files
+3. Run: `npm run build` to verify
+4. Commit and push:
    ```bash
-   git add data/content.yaml
-   git commit -m "Updated content"
+   git add .
+   git commit -m "Update content"
    git push
    ```
-6. Wait 2-3 minutes for deployment
+
+### Option 2: Manual Editing
+1. Edit the file in VS Code
+2. Save the file
+3. Test locally: `npm run dev`
+4. Verify build: `npm run build`
+5. Commit and push
+
+### Auto-Deployment
+Pushing to `main` triggers automatic Vercel deployment. Changes go live in ~2-3 minutes.
 
 ---
 
-## ❓ Troubleshooting
+## Troubleshooting
 
-### "My changes didn't show up on the website"
-1. Check if you saved the file
-2. Check if you pushed to GitHub (`git push`)
-3. Wait 3-5 minutes for deployment
-4. Hard refresh your browser (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows)
+### Build Failed
+Most common cause: Missing required field (like `metric` in ProfileCards examples).
 
-### "I broke something / website looks wrong"
-1. Check the spacing/indentation in your YAML file
-2. Make sure all quotes are closed: `"text here"`
-3. Make sure all `-` symbols are there for lists
-4. Compare to the examples in this guide
+**Fix:**
+1. Check the error message for the missing field
+2. Add the missing field to your content
+3. Run `npm run build` again
 
-### "How do I undo changes?"
-**In GitHub:**
-1. Go to your file on GitHub
-2. Click "History"
-3. Find the version before your changes
-4. Click "View" → Copy the content
-5. Edit the current file and paste the old content
+### Changes Not Showing
+1. Hard refresh browser: `Cmd+Shift+R` (Mac) or `Ctrl+Shift+R` (Windows)
+2. Check Vercel dashboard for deployment status
+3. Verify you pushed to `main` branch
 
-**In VS Code:**
-```bash
-git log  # Find the commit hash before your changes
-git revert [commit-hash]
-git push
-```
+### Formatting Looks Wrong
+- Check for unclosed quotes or backticks
+- Verify Markdown syntax (`**bold**`, not `*bold*`)
+- Ensure proper indentation in arrays
 
 ---
 
-## 📞 Need Help?
+## Important Rules
 
-If you're stuck:
-1. Check this guide again
-2. Look at the example format in `content.yaml`
-3. Ask Claude Code or ChatGPT: "I need help updating [specific thing] in my YAML file"
-4. Share the exact error message or what looks wrong
+**DO:**
+- Keep quotes around strings
+- Include all required fields (especially `metric` in examples)
+- Test with `npm run build` before pushing
+- Use backticks for multi-line strings
 
----
-
-## 📋 Quick Reference - Common Tasks
-
-| Task | Section in content.yaml | Time |
-|------|------------------------|------|
-| Add new job | `experience:` | 2 min |
-| Update skills | `skills:` | 1 min |
-| Change card text | `profile_cards:` | 2 min |
-| Add work example | `experience_examples:` | 3 min |
-| Update contact info | `contact:` | 1 min |
-| Link card to examples | Add `category:` to experience | 1 min |
-
-**Average update time: 5-10 minutes**
+**DON'T:**
+- Leave trailing commas in the last array item (optional but cleaner)
+- Forget the `metric` field in ProfileCards examples
+- Mix single and double quotes inconsistently
 
 ---
 
-**Last tip:** Make small changes and test often. Don't update everything at once - it's easier to fix mistakes if you only changed one section.
+## Files Summary
+
+| Purpose | File |
+|---------|------|
+| Most content | `lib/content.ts` |
+| Type definitions | `lib/types.ts` |
+| Capability cards | `components/ProfileCards.tsx` |
+| Beyond Work | `components/BeyondWork.tsx` |
+| Availability | `components/AvailabilitySection.tsx` |
+| Footer | `components/Footer.tsx` |
+| LLYLI Widget | `components/LLYLIWidget.tsx` |
+| Images | `public/images/` |
