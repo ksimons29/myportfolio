@@ -25,10 +25,9 @@ const cards: Card[] = [
       'Turn unclear requests into scoped MVPs. Run discovery, map constraints, and ship something teams can learn from.',
     examples: [
       {
-        company: 'Rabobank',
+        company: 'Major Dutch Bank',
         project: 'GenAI Knowledge Assistant',
-        description: 'Turned vague "help colleagues find the right rules" request into scoped MVP. Led discovery with 40+ interviews. Shipped v1 in ~12 months with ~95% answer accuracy.',
-        metric: '4+ hours saved per user/month',
+        description: 'Ran workshops with 20+ security advisors, compliancy analyst and developers to turn "help people find the right rules" into a scoped RAG assistant. Delivered v1 in ~12 months with ~95% answer accuracy across security and policy documents. Replaced hours of manual searches with instant, reliable answers.',
       },
       {
         company: 'Nike EMEA',
