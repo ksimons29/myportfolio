@@ -28,6 +28,7 @@ const cards: Card[] = [
         company: 'Major Dutch Bank',
         project: 'GenAI Knowledge Assistant',
         description: 'Ran workshops with 20+ security advisors, compliancy analyst and developers to turn "help people find the right rules" into a scoped RAG assistant. Delivered v1 in ~12 months with ~95% answer accuracy across security and policy documents. Replaced hours of manual searches with instant, reliable answers.',
+        metric: '~95% answer accuracy',
       },
       {
         company: 'Nike EMEA',
