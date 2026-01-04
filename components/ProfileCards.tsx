@@ -14,11 +14,11 @@ export default function ProfileCards() {
   }
 
   return (
-    <section className="relative py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-paper-warm">
+    <section className="relative py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-paper-warm">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-6 sm:mb-8">
-          <h2 className="font-display text-2xl sm:text-3xl font-medium text-ink mb-2">
+        <div className="text-center mb-8 sm:mb-10">
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium text-ink mb-2">
             What I Bring
           </h2>
           <p className="font-body text-sm sm:text-base text-ink-muted max-w-xl mx-auto">

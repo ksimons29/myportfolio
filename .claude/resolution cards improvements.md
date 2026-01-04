@@ -1,126 +1,125 @@
-# Portfolio Website Updates - Implementation Guide
+# Portfolio Website Update Instructions
 
 ## Overview
-Three focused changes to improve card visibility, content structure, and "What I Bring" prominence on both desktop and mobile.
+Update the "What I Bring" section to improve visibility and formatting across desktop and mobile devices.
 
 ---
 
-## Task 1: Fix Project Card Visibility
+## Task 1: Move "What I Bring" Section Higher on Page
 
-### Goal
-Ensure all project cards are visible and accessible (no cards cut off after position 2).
+### Steps:
+1. Locate the "What I Bring" section in the codebase
+2. Move this section to appear immediately after the hero/intro section
+3. Ensure section order is:
+   - Hero (name, title, intro)
+   - **"What I Bring"** ← moved here
+   - Project cards
+   - Everything else below
 
-### Steps
-1. Open the component/file that renders the project cards horizontal section
-2. Locate the container holding the cards
-3. Fix overflow issue:
-   - Add `overflow-x-auto` with visible scrollbar, OR
-   - Convert to wrapped grid layout that shows all cards
-4. Test on desktop: verify ALL cards are visible/accessible
-5. Test on mobile (375px): verify cards are accessible without horizontal overflow
+### Visual Improvements:
+4. Increase heading size to `text-3xl` or `text-4xl`
+5. Add more vertical padding/margin around the section (e.g., `py-12` or `py-16`)
+6. Ensure the section has clear visual separation from hero and project cards
 
 ---
 
-## Task 2: Standardize Project Card Content Format
+## Task 2: Reformat "What I Bring" Card Content
 
-### Goal
-Make card content scannable using consistent Context/Action/Result bullet structure.
-
-### Steps
-1. Locate project card data (likely in JSON/TS file or component props)
+### Steps:
+1. Locate "What I Bring" card data (likely in a JSON/TS file or component)
 2. Reformat each card to use this exact structure:
+
    ```
    • Context: [problem statement]
    • Action: [what you led/built]
    • Result: [metric + impact]
    ```
 
-3. Implementation requirements:
-   - Use the SAME bullet character (•) as other sections on site
-   - Ensure line-height and spacing match existing design system
-   - Keep each bullet to ONE line on mobile (≤60 characters)
-   - Maintain visual consistency with rest of portfolio
+3. Use the SAME bullet character (•) as other sections on site
+4. Ensure line-height and spacing match existing design system
+5. Keep each bullet to ONE line on mobile (≤60 characters)
 
-4. Apply to ALL project cards in both lanes (manufacturer and bank/retailer sections)
-
-### Example Format
-```
-GLOBAL MANUFACTURER
-Lineage visibility +30%
-
-Enterprise Data Governance Roadmap
-
-• Context: [existing problem statement from card]
-• Action: [existing action from card]
-• Result: [existing result from card]
+### Example Format:
+```typescript
+{
+  title: "Product Leadership",
+  bullets: [
+    "• Context: Teams struggling with unclear roadmaps",
+    "• Action: Led outcome-based discovery and prioritization",
+    "• Result: Shipped 3 high-impact features in 6 months"
+  ]
+}
 ```
 
 ---
 
-## Task 3: Elevate "What I Bring" Section
+## Task 3: Mobile Optimization
 
-### Goal
-Make "What I Bring" immediately visible on page load (desktop and mobile) without scrolling.
+### Requirements:
+1. **Viewport: 375px - 768px (mobile/tablet)**
+   - "What I Bring" section must be visible WITHOUT scrolling
+   - Cards stack vertically (one per row)
+   - Use `grid-cols-1` or `flex-col` for mobile breakpoints
+   
+2. **Text Readability:**
+   - Font size minimum `text-base` (16px)
+   - Line height `leading-relaxed` or `leading-loose`
+   - Adequate spacing between cards (`gap-4` or `gap-6`)
 
-### Steps
-1. Find the "What I Bring" section component in the code
-2. Move this entire section UP in the page structure to appear:
-   ```
-   - Hero/Name/Title section
-   - "What I Bring" section ← INSERT HERE
-   - Project cards sections
-   - Rest of content
-   ```
+3. **No Horizontal Scroll:**
+   - Ensure all content fits within viewport width
+   - Check padding/margin doesn't cause overflow
 
-3. Desktop optimization (≥1440px):
-   - Increase heading size to `text-3xl` or `text-4xl`
-   - Add vertical spacing (padding/margin) to make section stand out
-   - Ensure section is visible WITHOUT scrolling on page load
+---
 
-4. Mobile optimization (375px-768px):
-   - Ensure "What I Bring" visible in first viewport (no scroll needed)
-   - Stack cards/content vertically (single column)
-   - Maintain readable text size
-   - Adequate spacing between elements
-   - No horizontal scroll required
+## Task 4: Fix Project Card Visibility
 
-5. Visual prominence:
-   - Keep existing content (DO NOT change text)
-   - Just improve visibility through positioning and sizing
-   - Ensure consistent spacing and typography
+### Steps:
+1. Locate the project cards section (horizontal scrolling container)
+2. Fix overflow issue where cards after position 2 are cut off
+3. Options:
+   - Add proper horizontal scroll with visible scrollbar (`overflow-x-auto`)
+   - Or convert to vertical stack/grid that wraps (`grid` with `grid-cols-1 md:grid-cols-2`)
+4. Ensure ALL project cards are accessible and visible
 
 ---
 
 ## Verification Checklist
 
-After implementing all tasks, verify:
+After implementing changes, verify:
 
-### Desktop (1440px)
-- [ ] All project cards visible (none cut off)
-- [ ] Cards use • bullets for Context/Action/Result
-- [ ] "What I Bring" appears immediately after hero (above fold)
+### Desktop (1440px viewport):
+- [ ] "What I Bring" visible without scrolling (above the fold)
 - [ ] "What I Bring" heading is prominent (text-3xl or larger)
-- [ ] No layout overflow or breaks
+- [ ] Cards display side-by-side (if 3 cards: 3 columns)
+- [ ] All project cards are visible/accessible
+- [ ] Bullets use • character consistently
 
-### Mobile (375px)
-- [ ] All project cards accessible (stack or scroll cleanly)
-- [ ] Card bullets remain readable (one line per bullet)
-- [ ] "What I Bring" visible without scrolling
-- [ ] "What I Bring" cards stack vertically
-- [ ] No horizontal scroll issues
-- [ ] Text remains readable without zoom
+### Mobile (375px viewport):
+- [ ] "What I Bring" visible without scrolling (above the fold)
+- [ ] Cards stack vertically (one column)
+- [ ] Text is readable without zooming
+- [ ] Each bullet fits on ONE line (or wraps cleanly)
+- [ ] No horizontal scroll anywhere
+- [ ] All project cards are visible/accessible
+
+### Both viewports:
+- [ ] Consistent bullet character (•) throughout site
+- [ ] Line-height and spacing match design system
+- [ ] No layout shifts or overflow issues
 
 ---
 
-## Priority Order
-1. Task 3 (What I Bring visibility) - Highest impact
-2. Task 1 (Card visibility) - Critical UX
-3. Task 2 (Bullet formatting) - Polish
+## Implementation Priority
+
+1. **First:** Task 1 (Move "What I Bring" up)
+2. **Second:** Task 3 (Mobile optimization)
+3. **Third:** Task 2 (Reformat card content)
+4. **Fourth:** Task 4 (Fix project card visibility)
 
 ---
 
 ## Notes
-- Do NOT change any text content
-- Only modify layout, positioning, and formatting structure
-- Maintain existing design system (colors, fonts, spacing patterns)
-- Test on both desktop and mobile viewports before completing
+- **Do NOT change text content** - only structure and formatting
+- Maintain existing design tokens (colors, fonts, spacing scale)
+- Test responsive breakpoints: 375px, 768px, 1024px, 1440px

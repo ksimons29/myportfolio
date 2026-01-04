@@ -33,21 +33,21 @@ See What I bring below for real examples and outcomes.`,
           company: 'Major Bank',
           project: 'GenAI Knowledge Assistant',
           description:
-            '- **Context:** Vague request to "help people find the right rules" across fragmented policy docs\n- **Action:** Ran 25+ interviews and workshops, mapped constraints, shaped RAG assistant scope\n- **Result:** Delivered v1 in 12 months; replaced hours of manual search with instant answers',
+            '• **Context:** Vague request to "help people find the right rules" across fragmented policy docs\n• **Action:** Ran 25+ interviews and workshops, mapped constraints, shaped RAG assistant scope\n• **Result:** Delivered v1 in 12 months; replaced hours of manual search with instant answers',
           metric: '~95% answer accuracy',
         },
         {
           company: 'Global Retailer',
           project: 'First EMEA Discount-Sales Overview',
           description:
-            '- **Context:** No visibility into promotion effectiveness across EMEA stores; merchandising decisions based on gut feel\n- **Action:** Co-created pricing and promotion analytics with retail and merchandising teams; defined metrics and dashboard scope\n- **Result:** Delivered first EMEA-wide discount-sales overview; recognized as top product capability in internal reviews',
+            '• **Context:** No visibility into promotion effectiveness across EMEA stores; merchandising decisions based on gut feel\n• **Action:** Co-created pricing and promotion analytics with retail and merchandising teams; defined metrics and dashboard scope\n• **Result:** Delivered first EMEA-wide discount-sales overview; recognized as top product capability in internal reviews',
           metric: 'Adoption +60%',
         },
         {
           company: 'Global Manufacturer',
           project: 'Enterprise Data Governance Roadmap',
           description:
-            '- **Context:** Fragmented data ownership; executives misaligned on governance foundations\n- **Action:** Led enterprise maturity assessment; aligned executives on roles, lifecycle, and platform foundations\n- **Result:** Delivered 12-month roadmap; sustainability unit became first governance adopter',
+            '• **Context:** Fragmented data ownership; executives misaligned on governance foundations\n• **Action:** Led enterprise maturity assessment; aligned executives on roles, lifecycle, and platform foundations\n• **Result:** Delivered 12-month roadmap; sustainability unit became first governance adopter',
           metric: 'Lineage visibility +30%',
         },
       ],
@@ -62,21 +62,21 @@ See What I bring below for real examples and outcomes.`,
           company: 'Major Bank',
           project: 'RAG Pipeline Evaluation',
           description:
-            '- **Context:** LLM answers inconsistent; no way to measure quality at scale\n- **Action:** Built evaluation framework; ran A/B and multivariate tests on retrieval and LLM settings\n- **Result:** Accuracy targets met; framework became standard for future GenAI tools',
+            '• **Context:** LLM answers inconsistent; no way to measure quality at scale\n• **Action:** Built evaluation framework; ran A/B and multivariate tests on retrieval and LLM settings\n• **Result:** Accuracy targets met; framework became standard for future GenAI tools',
           metric: '~95% answer accuracy',
         },
         {
           company: 'Global Retailer',
           project: 'Analytics Platform Operating Model',
           description:
-            '- **Context:** Reporting inconsistent across units; unclear ownership slowing decisions\n- **Action:** Introduced operating model aligning ~100 KPIs; clarified ownership across retail, merchandising, and finance\n- **Result:** Reporting inconsistencies reduced ~40%; incident resolution time cut ~25%',
+            '• **Context:** Reporting inconsistent across units; unclear ownership slowing decisions\n• **Action:** Introduced operating model aligning ~100 KPIs; clarified ownership across retail, merchandising, and finance\n• **Result:** Reporting inconsistencies reduced ~40%; incident resolution time cut ~25%',
           metric: 'Decision speed +25%',
         },
         {
           company: 'Pharma Company',
           project: 'Predictive Supply Chain Dashboard',
           description:
-            '- **Context:** Out-of-stock issues hurting product availability across EMEA markets\n- **Action:** Built predictive dashboard for out-of-stock risk; supported self-service reporting for sales teams\n- **Result:** Contributed to +30% market share and +20% revenue growth in targeted regions',
+            '• **Context:** Out-of-stock issues hurting product availability across EMEA markets\n• **Action:** Built predictive dashboard for out-of-stock risk; supported self-service reporting for sales teams\n• **Result:** Contributed to +30% market share and +20% revenue growth in targeted regions',
           metric: 'Out-of-stock reduced ~25%',
         },
       ],
@@ -91,21 +91,21 @@ See What I bring below for real examples and outcomes.`,
           company: 'Major Bank',
           project: 'Cross-Functional GenAI Governance',
           description:
-            '- **Context:** Security, compliance, architecture, and content owners needed to align on GenAI guardrails\n- **Action:** Partnered across 5 teams to define governance, QA, and lifecycle rules with SME review loops\n- **Result:** Model adopted by security and compliance as standard for future GenAI tools',
+            '• **Context:** Security, compliance, architecture, and content owners needed to align on GenAI guardrails\n• **Action:** Partnered across 5 teams to define governance, QA, and lifecycle rules with SME review loops\n• **Result:** Model adopted by security and compliance as standard for future GenAI tools',
           metric: 'Governance model adopted bank-wide',
         },
         {
           company: 'Global Retailer',
           project: 'Analytics Platform Scale & Community',
           description:
-            '- **Context:** Low adoption; users unclear on ownership; onboarding slow\n- **Action:** Led 13-person squad; built 90+ person power-user community; introduced operating model clarifying ownership\n- **Result:** Adoption jumped 60%; new user ramp-up cut by a quarter',
+            '• **Context:** Low adoption; users unclear on ownership; onboarding slow\n• **Action:** Led 13-person squad; built 90+ person power-user community; introduced operating model clarifying ownership\n• **Result:** Adoption jumped 60%; new user ramp-up cut by a quarter',
           metric: 'Adoption +60%, ramp-up time -25%',
         },
         {
           company: 'Consulting Firm',
           project: 'Internal Data Management Community',
           description:
-            '- **Context:** No structured way to share lessons on data, governance, and change across European offices\n- **Action:** Co-founded Data Management Club; organized Benelux events with keynote speakers; turned project lessons into reusable playbooks\n- **Result:** Built lasting cross-European community; facilitated knowledge sharing on product, governance, and change',
+            '• **Context:** No structured way to share lessons on data, governance, and change across European offices\n• **Action:** Co-founded Data Management Club; organized Benelux events with keynote speakers; turned project lessons into reusable playbooks\n• **Result:** Built lasting cross-European community; facilitated knowledge sharing on product, governance, and change',
           metric: '200+ participants per event',
         },
       ],

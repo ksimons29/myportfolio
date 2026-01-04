@@ -10,11 +10,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     return text
       .split('\n\n')
       .map((paragraph, i) => {
-        // Handle bullet points
-        if (paragraph.includes('\n-')) {
+        // Handle bullet points (both • and -)
+        if (paragraph.includes('\n•') || paragraph.includes('\n-')) {
           const lines = paragraph.split('\n')
           const intro = lines[0]
-          const bullets = lines.slice(1).filter(l => l.startsWith('-'))
+          const bullets = lines.slice(1).filter(l => l.startsWith('•') || l.startsWith('-'))
 
           return (
             <div key={i} className="mb-4">
@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               )}
               <ul className="list-disc list-inside space-y-1 text-ink-muted">
                 {bullets.map((bullet, j) => (
-                  <li key={j}>{bullet.replace(/^-\s*/, '')}</li>
+                  <li key={j}>{bullet.replace(/^[•\-]\s*/, '')}</li>
                 ))}
               </ul>
             </div>
@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   }
 
   return (
-    <article className="card mb-6 last:mb-0 hover:shadow-medium transition-shadow duration-300">
+    <article className="card hover:shadow-medium transition-shadow duration-300">
       {/* Header */}
       <div className="mb-4">
         <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
