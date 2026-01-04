@@ -16,9 +16,9 @@ export const content: PortfolioContent = {
 
   about: `**6 years in product roles. 10 years turning complex problems into simple products.**
 
-I turn complex problems into products people actually use. Spent a decade at Cognizant delivering across retail, banking, and telecom, leading discovery, aligning stakeholders, and shipping in regulated, data-driven environments. Proven ability to get products adopted across business and technical teams.
-
-Based in Lisbon. Currently completing Carnegie Mellon's Advanced Product Management Program and building LLYLI, a language learning app.`,
+Product Manager and Consulting Manager in Lisbon. Turns messy problems into products people adopt through crisp discovery, stakeholder alignment, and focused delivery.
+Currently completing Carnegie Mellon’s Advanced Product Management Program and building LLYLI, a language learning app.
+See What I bring below for real examples and outcomes.`,
 
   currentWork: [
     {
