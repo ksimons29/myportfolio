@@ -4,6 +4,36 @@ All notable changes to the portfolio website.
 
 ---
 
+## 2026-01-04 - Improved Cognizant Experience Section
+
+**Summary:** Updated Cognizant experience section with anonymized clients, product-first framing, and better mobile readability.
+
+**Changes:**
+- **Anonymized Clients:** Changed specific company names to generic descriptors (Major European Bank, Global Athletic Brand, etc.)
+- **Product-First Framing:** Updated opening to "Embedded Product Manager" for clearer positioning
+- **Enhanced Metrics Format:** Used arrow symbols (→) for better scannability and mobile readability
+- **Added Maturity Assessments:** Now mentioned in first paragraph to highlight broader capabilities
+- **Cleaner Structure:** Reorganized with shorter lines and clearer visual hierarchy
+- **Enhanced BI Trainee Description:** Added "business intelligence tools" for clarity
+
+**Files Changed:**
+- lib/content.ts (Cognizant experience description)
+
+**How to Verify:**
+1. Navigate to Experience section
+2. Check Cognizant description uses anonymized names (Major European Bank, Global Athletic Brand, etc.)
+3. Verify metrics use arrow format (→)
+4. Confirm improved readability on mobile devices
+
+**Key Changes:**
+- Major European Bank (was: Rabobank)
+- Global Athletic Brand (was: Nike EMEA)
+- Global Food Equipment Manufacturer (was: Marel)
+- Dutch Telecom Provider (was: KPN B2B)
+- Pharmaceutical Company (was: Teva EMEA)
+
+---
+
 ## 2026-01-04 - Centralized Capability Cards Content & Updated Examples
 
 **Summary:** Refactored capability cards to use centralized content management and updated all examples with verified project data.
