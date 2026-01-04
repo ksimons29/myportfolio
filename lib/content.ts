@@ -76,22 +76,22 @@ BI team overwhelmed with custom report requests; decision-makers waiting days fo
 - Adoption increased ~60%, ramp-up time reduced ~25%`,
     },
     {
-      title: 'Data Governance Operating Model',
-      subtitle: 'Platform/Process Product | Retail',
-      caption: '2022-2024',
+      title: 'Enterprize Data Governance Roadmap',
+      subtitle: 'Data Governance Program Digital Transformation | Manufacturing',
+      caption: '2021-2022',
       description: `**Challenge:**
-Fragmented data governance causing compliance gaps, slow approvals, and frustrated data teams.
+Fragmented data ownership and unclear governance practices, with limited executive alignment on roles, lifecycle, and the foundations needed to scale data management across the business.
 
 **What I Did:**
-- Designed federated governance model with clear ownership and access rules
-- Embedded Collibra to catalogue assets (business terms, datasets), aligning ~100 KPIs
-- Built visible quality scorecard with gamified improvement tracking
-- Added stewardship and approval workflows to reduce ambiguity and increase trust
+- Led an enterprise data maturity assessment to pinpoint gaps in ownership, governance, and visibility across domains
+- Facilitated executive alignment on governance roles, decision rights, data lifecycle, and platform foundations
+- Structured the roadmap using DAMA data management principles, covering data governance, metadata management, data quality, and stewardship
+- Delivered a 12 month roadmap to operationalize governance and improve lineage visibility over time
+- Positioned the sustainability domain as the first adopter to prove the model and create a repeatable rollout path
 
 **Impact:**
-- Policy adoption: 85% in 6 months
-- Quality scores: 60% → 85%
-- Approval process: 4 weeks → 1 week`,
+- Increased lineage visibility by about 30 percent following adoption of the roadmap and governance model
+- Established a clear first adoption area in sustainability, enabling a practical starting point for broader rollout,
     },
   ],
 
