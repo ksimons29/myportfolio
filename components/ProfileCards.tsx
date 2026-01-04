@@ -2,104 +2,12 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-
-interface Example {
-  company: string
-  project: string
-  description: string
-  metric: string
-}
-
-interface Card {
-  icon: string
-  title: string
-  description: string
-  examples: Example[]
-}
-
-const cards: Card[] = [
-  {
-    icon: '/images/discovery.svg',
-    title: 'From Ambiguity to First Release',
-    description:
-      'Turn unclear requests into scoped MVPs. Run discovery, map constraints, and ship something teams can learn from.',
-    examples: [
-      {
-        company: 'Major Dutch Bank',
-        project: 'GenAI Knowledge Assistant',
-        description: 'Ran workshops with 20+ security advisors, compliancy analyst and developers to turn "help people find the right rules" into a scoped RAG assistant. Delivered v1 in ~12 months with ~95% answer accuracy across security and policy documents. Replaced hours of manual searches with instant, reliable answers.',
-        metric: '~95% answer accuracy',
-      },
-      {
-        company: 'Nike EMEA',
-        project: 'Self-Service Analytics Platform',
-        description: 'Defined 0→1 roadmap through stakeholder interviews. Separated quick wins from platform vision.',
-        metric: '120+ users self-serving in 6 months',
-      },
-      {
-        company: 'Marel',
-        project: 'Enterprise Data Platform',
-        description: 'Led maturity assessment and defined scope, guardrails, and success criteria for global data platform. Recruited and onboarded development team.',
-        metric: 'Incident resolution time cut by ~50%',
-      },
-    ],
-  },
-  {
-    icon: '/images/data.svg',
-    title: 'Products with Measurable Success',
-    description:
-      'Define what "working" looks like before building. Set metrics, run experiments, iterate based on real usage.',
-    examples: [
-      {
-        company: 'Rabobank',
-        project: 'RAG Pipeline Evaluation',
-        description: 'Built evaluation framework for answer quality. Ran A/B and multivariate tests on LLM and retrieval settings until accuracy targets met.',
-        metric: '~95% answer accuracy achieved',
-      },
-      {
-        company: 'Nike EMEA',
-        project: 'Data Quality Scorecard',
-        description: 'Designed quality metrics visible to all stakeholders. Created feedback loops with data stewards. Embedded Collibra for ~100 KPIs.',
-        metric: 'Quality scores: 60% → 85%',
-      },
-      {
-        company: 'KPN',
-        project: 'KPI Reporting Environment',
-        description: 'Standardized KPIs across units. Evaluated BI tools and set self-service strategy.',
-        metric: 'Reporting time reduced ~30%',
-      },
-    ],
-  },
-  {
-    icon: '/images/collaboration.svg',
-    title: 'Aligned Teams, Shipped Work',
-    description:
-      'Keep delivery moving through clear ownership, written updates, and unblocking. Product, engineering, and business stay in sync.',
-    examples: [
-      {
-        company: 'Rabobank',
-        project: 'Data Governance Operating Model',
-        description: 'Defined governance, QA, and lifecycle rules adopted by security and compliance as template for future GenAI tools.',
-        metric: 'Governance model adopted bank-wide',
-      },
-      {
-        company: 'Nike EMEA',
-        project: 'Analytics Platform Scale',
-        description: 'Led 13-person squad. Built 90+ person power-user community. Introduced operating model clarifying ownership.',
-        metric: 'Adoption +60%, ramp-up time -25%',
-      },
-      {
-        company: 'Marel',
-        project: 'Data Platform Team Onboarding',
-        description: 'Recruited and onboarded development and data-management team. Clarified ownership and incident processes.',
-        metric: 'Incident resolution -50%',
-      },
-    ],
-  },
-]
+import { content } from '@/lib/content'
+import type { CapabilityCard } from '@/lib/types'
 
 export default function ProfileCards() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const cards = content.capabilityCards
 
   const toggleCard = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index)

@@ -12,7 +12,7 @@ This guide shows you where to update content for each section of your portfolio 
 |---------|--------------|
 | Name, title, email, socials | `lib/content.ts` → `site` |
 | About text | `lib/content.ts` → `about` |
-| "What I Bring" cards | `components/ProfileCards.tsx` |
+| "What I Bring" cards | `lib/content.ts` → `capabilityCards` |
 | Current Work (LLYLI) | `lib/content.ts` → `currentWork` |
 | Selected Outcomes | `lib/content.ts` → `selectedOutcomes` |
 | Experience | `lib/content.ts` → `experience` |
@@ -32,10 +32,11 @@ This guide shows you where to update content for each section of your portfolio 
 ```
 my-portfolio/
 ├── lib/
-│   └── content.ts          ← MAIN CONTENT FILE (most sections)
+│   ├── content.ts          ← MAIN CONTENT FILE (most sections)
+│   └── types.ts            ← TypeScript type definitions
 │
 ├── components/
-│   ├── ProfileCards.tsx    ← "What I Bring" cards + examples
+│   ├── ProfileCards.tsx    ← Component (reads from lib/content.ts)
 │   ├── AvailabilitySection.tsx ← Services/availability
 │   ├── BeyondWork.tsx      ← Beyond Work section
 │   ├── Footer.tsx          ← Footer tagline
@@ -100,20 +101,20 @@ I turn complex problems into products people actually use...`,
 
 ### 3. "What I Bring" Cards (Capability Cards)
 
-**File:** `components/ProfileCards.tsx`
-**Location:** Lines 20-98, the `cards` array
+**File:** `lib/content.ts`
+**Location:** Lines 23-111, the `capabilityCards` array
 
 ```typescript
-const cards: Card[] = [
+capabilityCards: [
   {
     icon: '/images/discovery.svg',
     title: 'From Ambiguity to First Release',
     description: 'Turn unclear requests into scoped MVPs...',
     examples: [
       {
-        company: 'Major Dutch Bank',
+        company: 'Major Bank',
         project: 'GenAI Knowledge Assistant',
-        description: 'Ran workshops with 20+ security advisors...',
+        description: '- **Context:** ...\n- **Action:** ...\n- **Result:** ...',
         metric: '~95% answer accuracy',  // ← Shows as badge in header!
       },
       // ... more examples
@@ -136,18 +137,18 @@ Description text...
 
 The `metric` field becomes the **colored badge** next to the company name.
 
-**Example metrics currently in use:**
+**Current metrics in use:**
 | Card | Company | Metric |
 |------|---------|--------|
-| Card 1 | Major Dutch Bank | `~95% answer accuracy` |
-| Card 1 | Nike EMEA | `120+ users self-serving in 6 months` |
-| Card 1 | Marel | `Incident resolution time cut by ~50%` |
-| Card 2 | Rabobank | `~95% answer accuracy achieved` |
-| Card 2 | Nike EMEA | `Quality scores: 60% → 85%` |
-| Card 2 | KPN | `Reporting time reduced ~30%` |
-| Card 3 | Rabobank | `Governance model adopted bank-wide` |
-| Card 3 | Nike EMEA | `Adoption +60%, ramp-up time -25%` |
-| Card 3 | Marel | `Incident resolution -50%` |
+| Card 1 | Major Bank | `~95% answer accuracy` |
+| Card 1 | Global Retailer | `Adoption +60%` |
+| Card 1 | Global Manufacturer | `Lineage visibility +30%` |
+| Card 2 | Major Bank | `~95% answer accuracy` |
+| Card 2 | Global Retailer | `Decision speed +25%` |
+| Card 2 | Pharma Company | `Out-of-stock reduced ~25%` |
+| Card 3 | Major Bank | `Governance model adopted bank-wide` |
+| Card 3 | Global Retailer | `Adoption +60%, ramp-up time -25%` |
+| Card 3 | Consulting Firm | `200+ participants per event` |
 
 **Tips for good metrics:**
 - Keep them short (fits in a badge)
@@ -156,7 +157,7 @@ The `metric` field becomes the **colored badge** next to the company name.
 - Focus on outcomes, not activities
 
 **To change a metric:**
-1. Open `components/ProfileCards.tsx`
+1. Open `lib/content.ts`
 2. Find the example you want to update (search for company name)
 3. Change the `metric: '...'` value
 4. Save and rebuild
@@ -165,6 +166,12 @@ The `metric` field becomes the **colored badge** next to the company name.
 1. Copy an existing example block
 2. Paste it inside the `examples: [...]` array
 3. Update all four fields: `company`, `project`, `description`, `metric`
+
+**Description Format:**
+Use the Context/Action/Result format with Markdown:
+```typescript
+description: '- **Context:** Problem or situation\n- **Action:** What you did\n- **Result:** Impact achieved'
+```
 
 ---
 
@@ -432,9 +439,9 @@ Most common cause: Missing required field (like `metric` in ProfileCards example
 
 | Purpose | File |
 |---------|------|
-| Most content | `lib/content.ts` |
+| Most content (centralized) | `lib/content.ts` |
 | Type definitions | `lib/types.ts` |
-| Capability cards | `components/ProfileCards.tsx` |
+| Capability cards component | `components/ProfileCards.tsx` (reads from `lib/content.ts`) |
 | Beyond Work | `components/BeyondWork.tsx` |
 | Availability | `components/AvailabilitySection.tsx` |
 | Footer | `components/Footer.tsx` |

@@ -64,10 +64,19 @@ export interface CapabilityExample {
   metric: string
 }
 
+// Capability card structure
+export interface CapabilityCard {
+  icon: string
+  title: string
+  description: string
+  examples: CapabilityExample[]
+}
+
 // Full content structure
 export interface PortfolioContent {
   site: SiteConfig
   about: string
+  capabilityCards: CapabilityCard[]
   currentWork: Project[]
   selectedOutcomes: Project[]
   experience: Experience[]
