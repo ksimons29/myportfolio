@@ -40,45 +40,45 @@ Part of VibeCoding Lisboa's product community. Also completing Vibe Skills cours
     {
       title: 'GenAI Knowledge Assistant',
       subtitle: 'B2B Internal Product | Financial Services',
-      caption: '2024-2025',
+      caption: '2024 to 2025',
       description: `**Challenge:**
 Risk and IT teams wasting hours searching fragmented policy documentation across multiple systems.
 
 **What I Did:**
-- Led discovery (40+ interviews, workflow mapping, in-product surveys) to turn vague "help colleagues find the right rules" request into prioritized roadmap
-- Partnered with engineering and content owners to design RAG pipeline and role-based access for regulated content
+- Led discovery (40+ interviews, workflow mapping, in product surveys) to turn vague "help colleagues find the right rules" request into prioritized roadmap
+- Partnered with engineering and content owners to design RAG pipeline and role based access for regulated content
 - Built governance and QA model (risk scoring, SME review loops, lifecycle rules) adopted by security and compliance as template for future GenAI tools
-- Ran A/B and multivariate tests on LLM and retrieval settings
+- Ran A B and multivariate tests on LLM and retrieval settings
 
 **Impact:**
 - ~95% answer accuracy
 - 4+ hours saved per user per month
-- Governance model adopted as bank-wide standard`,
+- Governance model adopted as bank wide standard`,
     },
     {
-      title: 'Self-Service Analytics Platform',
+      title: 'Self Service Analytics Platform',
       subtitle: 'Internal Analytics Product | Retail',
-      caption: '2022-2024',
+      caption: '2022 to 2024',
       description: `**Challenge:**
-BI team overwhelmed with custom report requests; decision-makers waiting days for basic insights.
+BI team overwhelmed with custom report requests; decision makers waiting days for basic insights.
 
 **What I Did:**
 - Owned roadmap for 2,000+ user EMEA analytics platform serving retail, merchandising, and finance
-- Led 13-person squad; introduced operating model clarifying ownership for ~100 KPIs
-- Built 90+ person power-user community and structured onboarding program
-- Co-created pricing and promotion analytics, including Nike's first EMEA discount-sales overview
+- Led 13 person squad; introduced operating model clarifying ownership for ~100 KPIs
+- Built 90+ person power user community and structured onboarding program
+- Co created pricing and promotion analytics, including Nike's first EMEA discount sales overview
 - Embedded Collibra to catalogue key data and metrics
 
 **Impact:**
 - Decision speed improved ~25%
 - Reporting inconsistencies reduced ~40%
 - Incident resolution time reduced ~25%
-- Adoption increased ~60%, ramp-up time reduced ~25%`,
+- Adoption increased ~60%, ramp up time reduced ~25%`,
     },
     {
-      title: 'Enterprize Data Governance Roadmap',
-      subtitle: 'Data Governance Program Digital Transformation | Manufacturing',
-      caption: '2021-2022',
+      title: 'Enterprise Data Governance Roadmap',
+      subtitle: 'Data Governance Program | Digital Transformation | Manufacturing',
+      caption: '2021 to 2022',
       description: `**Challenge:**
 Fragmented data ownership and unclear governance practices, with limited executive alignment on roles, lifecycle, and the foundations needed to scale data management across the business.
 
@@ -86,12 +86,13 @@ Fragmented data ownership and unclear governance practices, with limited executi
 - Led an enterprise data maturity assessment to pinpoint gaps in ownership, governance, and visibility across domains
 - Facilitated executive alignment on governance roles, decision rights, data lifecycle, and platform foundations
 - Structured the roadmap using DAMA data management principles, covering data governance, metadata management, data quality, and stewardship
+- Applied CMDB style principles to define critical data assets, ownership, relationships, and change control to improve traceability
 - Delivered a 12 month roadmap to operationalize governance and improve lineage visibility over time
 - Positioned the sustainability domain as the first adopter to prove the model and create a repeatable rollout path
 
 **Impact:**
 - Increased lineage visibility by about 30 percent following adoption of the roadmap and governance model
-- Established a clear first adoption area in sustainability, enabling a practical starting point for broader rollout,
+- Established a clear first adoption area in sustainability, enabling a practical starting point for broader rollout`,
     },
   ],
 
@@ -216,4 +217,4 @@ Cognizant internal:
   beyondWork: `Played saxophone and coordinated concerts as board member for Jazzalike Big Band Utrecht (2021–2025). Helped my family's toy shop in the Netherlands with digital marketing, making it the region's top searchable toy store online.
 
 Completed the Caminho Português before settling in Lisbon. Enjoy live music, hiking, and conversations about culture and world affairs.`,
-}
+};
