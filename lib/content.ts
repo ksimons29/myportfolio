@@ -56,18 +56,18 @@ Risk and IT teams wasting hours searching fragmented policy documentation across
 - Governance model adopted as bank wide standard`,
     },
     {
-      title: 'Self Service Analytics Platform',
-      subtitle: 'Internal Analytics Product | Retail',
+      title: 'Self Service Retail Analytics Platform',
+      subtitle: 'Internal Retail Analytics Product | Direct Stores and Marketplace | EMEA',
       caption: '2022 to 2024',
       description: `**Challenge:**
-BI team overwhelmed with custom report requests; decision makers waiting days for basic insights.
+Direct stores and marketplace teams had fragmented views of pricing, promotions, and sales performance across EMEA. Leaders could get answers, but it often meant pulling data from multiple places and waiting on follow ups from the analytics team.
 
 **What I Did:**
 - Owned roadmap for 2,000+ user EMEA analytics platform serving retail, merchandising, and finance
 - Led 13 person squad; introduced operating model clarifying ownership for ~100 KPIs
 - Built 90+ person power user community and structured onboarding program
-- Co created pricing and promotion analytics, including Nike's first EMEA discount sales overview
-- Embedded Collibra to catalogue key data and metrics
+- Co created pricing and promotion analytics, including Nike’s first EMEA discount sales overview to measure promotion effectiveness
+- Implemented a governed catalogue for key data and metrics to improve trust and reduce rework
 
 **Impact:**
 - Decision speed improved ~25%
