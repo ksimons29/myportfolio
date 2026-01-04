@@ -26,10 +26,11 @@ Based in Lisbon. Currently completing Carnegie Mellon's Advanced Product Managem
       subtitle: 'VibeCoding Lisboa',
       caption: '2025 - Present',
       link: 'https://github.com/ksimons29',
-      quote: 'An AI-powered app that captures words from your environment and turns them into personalized flashcards',
-      description: `An AI-powered app that captures words from your environment (menus, signs, conversations) and turns them into personalized spaced-repetition flashcards.
+      quote: 'Turn the words you see, hear, and need today into phrases you can use tomorrow.',
+      description: `LLYLI helps newcomers build a personal, from life vocabulary. You capture real words and phrases from your day (signs, chats, errands). The system turns them into short, natural sentences at your level and turns those into spaced repetition cards for a few minutes of active recall each day. The right phrases come back when you need them, so you get comfortable faster in your real situations (home, transport, admin, work, social).
 
-End-to-end product work: discovery with expat language learners, GenAI integration (OCR, translation APIs, prompt engineering), mobile-first UX.
+End to end product work: user discovery with expat language learners, JTBD, rapid prototyping, and an AI assisted capture to card flow (text, voice, photo).
+
 
 Part of VibeCoding Lisboa's product community. Also completing Vibe Skills courses.`,
     },
