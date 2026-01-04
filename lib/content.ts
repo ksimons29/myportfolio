@@ -3,7 +3,7 @@ import { PortfolioContent } from './types'
 export const content: PortfolioContent = {
   site: {
     name: 'Koos Simons',
-    title: 'Senior Product Manager',
+    title: 'Product Manager - Lisbon based',
     email: 'koossimons91@gmail.com',
     description: 'Senior Product Manager based in Lisbon with 6 years PM experience building products that turn complex problems into solutions people actually adopt.',
     location: 'Lisbon, Portugal',
