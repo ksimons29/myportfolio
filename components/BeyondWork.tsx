@@ -149,9 +149,7 @@ export default function BeyondWork() {
   return (
     <div className="prose prose-lg max-w-none text-ink-soft leading-relaxed">
       <p className="mb-5">
-        Played saxophone
-        <InlineIcon><SaxophoneIcon className="w-5 h-5" /></InlineIcon>
-        and coordinated concerts as board member for Jazzalike Big Band Utrecht (2021–2025).
+        Played saxophone and coordinated concerts as board member for Jazzalike Big Band Utrecht (2021–2025).
         Helped my family&apos;s toy shop
         <InlineIcon><ToyIcon className="w-5 h-5" /></InlineIcon>
         in the Netherlands with digital marketing, making it the region&apos;s top searchable toy store online.
