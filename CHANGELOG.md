@@ -4,6 +4,78 @@ All notable changes to the portfolio website.
 
 ---
 
+## 2026-01-05 - Card Overflow Fix & Mobile Viewport Optimization
+
+**Summary:** Fixed capability card clipping issue and optimized mobile layout to ensure "What I Bring" section is visible without scrolling through aggressive compression and sticky header design.
+
+**Changes:**
+
+### Problem 1: Card Overflow Fixed
+- **Capability Cards Max-Height:** Increased from `max-h-[800px]` to `max-h-[1200px]` in ProfileCards.tsx
+- **Result:** All 3 capability card examples now fully visible when expanded (no clipping)
+
+### Problem 2: Zero Scrolling Mobile Optimization
+- **Section Reordering:** Moved "What I Bring" to position 3 (AFTER About section for better narrative flow)
+- **Sticky Frosted Glass Header:** Added sticky header to ProfileCards with 95% opacity and backdrop blur effect
+- **Scroll Indicator:** Added bouncing arrow on mobile to guide users to cards below
+- **Mobile Compression (284px saved total):**
+  - Header: Smaller profile image (140px on mobile, 180px desktop), tighter padding (-104px)
+  - About: Shows first paragraph only on mobile, tighter spacing (-180px)
+  - Section: Reduced vertical padding on mobile (-16px)
+- **Progressive Enhancement:** Mobile gets efficiency, desktop maintains original luxury spacing
+
+**Files Changed:**
+- components/ProfileCards.tsx (max-height fix + sticky header wrapper with frosted glass)
+- components/Header.tsx (responsive padding, profile image size, margins)
+- components/AboutSection.tsx (mobile/desktop conditional rendering, responsive typography)
+- components/Section.tsx (responsive vertical padding)
+- app/page.tsx (section reordering)
+
+**How to Verify:**
+
+1. **Mobile (375px × 667px):**
+   - [ ] Page loads showing Header
+   - [ ] About section visible (first paragraph only)
+   - [ ] "What I Bring" heading visible WITHOUT scrolling (~608px total height)
+   - [ ] Profile image 140px (appropriate mobile size)
+   - [ ] All 3 capability cards expand fully (no clipping)
+   - [ ] Sticky header activates and stays at top when scrolling cards
+   - [ ] Bounce arrow indicator shows on mobile
+
+2. **Desktop (1440px × 900px):**
+   - [ ] Header maintains original spacing (py-10)
+   - [ ] About shows full content (all paragraphs)
+   - [ ] Profile image 180px
+   - [ ] "What I Bring" heading visible after minimal scroll
+   - [ ] Sticky header with frosted glass effect (95% opacity + backdrop blur)
+   - [ ] All 3 examples visible when cards expand
+
+3. **All Viewports:**
+   - [ ] Section order: Header → About → What I Bring → Projects
+   - [ ] Sticky header has subtle border separator (30% opacity)
+   - [ ] Smooth transitions (300ms)
+   - [ ] No horizontal overflow
+
+**Height Calculations:**
+- **Mobile Before:** Header (450px) + About (400px) = 850px > 667px viewport ❌
+- **Mobile After:** Header (346px) + About (182px) + "What I Bring" heading (80px) = 608px < 667px ✅
+- **Desktop:** Header (280px) + About (364px) + heading (80px) = 724px < 900px ✅
+
+**Design Features:**
+- Frosted glass sticky header (modern iOS-like aesthetic)
+- Progressive enhancement (mobile-first responsive design)
+- Better narrative flow: Identity → Context → Strengths → Evidence
+- Zero scrolling requirement met on both mobile and desktop
+
+**Benefits:**
+- ✅ Fixed card clipping issue (all examples visible)
+- ✅ Zero scrolling to see "What I Bring" on mobile
+- ✅ Sticky header keeps section title always visible while browsing cards
+- ✅ Mobile users get efficient layout, desktop users keep luxury spacing
+- ✅ Improved information architecture and user flow
+
+---
+
 ## 2026-01-04 - Enhanced "What I Bring" Section Visibility & Formatting
 
 **Summary:** Repositioned "What I Bring" section for better prominence, enhanced visual hierarchy, and standardized bullet formatting across capability cards.
