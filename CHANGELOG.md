@@ -4,6 +4,51 @@ All notable changes to the portfolio website.
 
 ---
 
+## 2026-01-04 - Enhanced "What I Bring" Section Visibility & Formatting
+
+**Summary:** Repositioned "What I Bring" section for better prominence, enhanced visual hierarchy, and standardized bullet formatting across capability cards.
+
+**Changes:**
+- **Section Repositioning:** Moved "What I Bring" to position 2 (immediately after hero, before About section)
+- **Enhanced Desktop Heading:** Increased heading size to `lg:text-4xl` for better visibility on large screens
+- **Improved Spacing:** Updated section padding to `py-10 sm:py-12 lg:py-16` for stronger visual hierarchy
+- **Header Margin:** Increased header bottom margin to `mb-8 sm:mb-10` for better separation
+- **Standardized Bullets:** Changed all 9 capability card examples from `-` to `•` bullets for consistency
+- **Bullet Detection:** Updated ProjectCard.tsx to handle both `•` and `-` bullet characters for backward compatibility
+- **Project Card Spacing:** Added `space-y-6` wrapper to Selected Outcomes for consistent vertical spacing
+- **Scroll Hint Update:** Changed mobile scroll hint from "See my strengths" to "See my work"
+
+**Files Changed:**
+- app/page.tsx (moved ProfileCards component, updated scroll hint, added space-y-6 wrapper)
+- components/ProfileCards.tsx (enhanced heading size and section spacing)
+- components/ProjectCard.tsx (updated bullet detection regex and filter logic)
+- lib/content.ts (updated all 9 capability card example bullets)
+
+**How to Verify:**
+1. **Desktop (1440px):**
+   - "What I Bring" appears immediately after hero section
+   - Heading displays at text-4xl size
+   - Section has prominent vertical padding
+   - All capability card examples use • bullets
+
+2. **Mobile (375px):**
+   - "What I Bring" visible without scrolling or minimal scroll
+   - Cards stack vertically (one column)
+   - Scroll hint says "See my work"
+   - No horizontal overflow
+
+3. **Selected Outcomes:**
+   - All 3 cards visible with consistent 24px spacing between them
+   - Original Challenge/What I Did/Impact format preserved
+
+**Benefits:**
+- Improved above-the-fold visibility of key value proposition
+- Better visual hierarchy on desktop viewports
+- Consistent bullet formatting across all cards
+- Future-proof bullet detection supporting multiple formats
+
+---
+
 ## 2026-01-04 - Improved Cognizant Experience Section
 
 **Summary:** Updated Cognizant experience section with anonymized clients, product-first framing, and better mobile readability.
