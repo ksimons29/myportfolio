@@ -16,14 +16,25 @@ export default function ProfileCards() {
   return (
     <section className="relative py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-paper-warm">
       <div className="max-w-6xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-8 sm:mb-10">
-          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium text-ink mb-2">
-            What I Bring
-          </h2>
-          <p className="font-body text-sm sm:text-base text-ink-muted max-w-xl mx-auto">
-            Three core strengths — tap each card to see real examples
-          </p>
+        {/* Section header - STICKY with frosted glass */}
+        <div className="sticky top-0 z-10 bg-paper-warm/95 backdrop-blur-sm
+                        py-4 mb-8 sm:mb-10 -mt-4
+                        border-b border-border/30
+                        transition-all duration-300">
+          <div className="text-center">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-medium text-ink mb-2">
+              What I Bring
+            </h2>
+            <p className="font-body text-sm sm:text-base text-ink-muted max-w-xl mx-auto">
+              Three core strengths — tap each card to see real examples
+            </p>
+            {/* Scroll indicator - mobile only */}
+            <div className="mt-3 flex justify-center md:hidden">
+              <svg className="w-4 h-4 text-gold/60 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -98,7 +109,7 @@ export default function ProfileCards() {
               {/* Expanded Examples Section */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-out
-                           ${expandedIndex === index ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
+                           ${expandedIndex === index ? 'max-h-[1200px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
               >
                 <div className="bg-white rounded-xl border border-border-muted p-4 lg:p-6 shadow-soft">
                   <div className="space-y-4">

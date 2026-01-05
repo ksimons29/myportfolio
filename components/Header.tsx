@@ -5,7 +5,7 @@ export default function Header() {
   const { site } = content
 
   return (
-    <header className="relative py-8 sm:py-10 flex items-center justify-center bg-hero-gradient overflow-hidden">
+    <header className="relative py-4 sm:py-8 md:py-10 flex items-center justify-center bg-hero-gradient overflow-hidden">
       {/* Gradient overlays for depth */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -18,16 +18,16 @@ export default function Header() {
       />
 
       {/* Hero content with prominent profile image */}
-      <div className="relative z-[2] max-w-4xl w-full px-4 sm:px-6 py-6 text-center">
+      <div className="relative z-[2] max-w-4xl w-full px-4 sm:px-6 py-3 sm:py-6 text-center">
         {/* Large profile image - visual anchor */}
-        <div className="mb-4 flex justify-center">
+        <div className="mb-2 sm:mb-4 flex justify-center">
           <div className="relative">
             <Image
               src="/images/profile.jpg"
               alt={site.name}
-              width={180}
-              height={180}
-              className="rounded-full border-4 border-gold/80 shadow-2xl object-cover
+              width={140}
+              height={140}
+              className="w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] rounded-full border-4 border-gold/80 shadow-2xl object-cover
                          ring-4 ring-white/10 ring-offset-4 ring-offset-transparent"
               priority
             />
