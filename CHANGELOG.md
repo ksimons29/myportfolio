@@ -4,6 +4,34 @@ All notable changes to the portfolio website.
 
 ---
 
+## 2026-01-07 - Profile Card Bullet Point Formatting Fix
+
+**Summary:** Fixed bullet point display in capability card examples to ensure Context, Action, and Result bullets appear on separate lines for better readability.
+
+**Changes:**
+- **CSS Fix:** Added `whitespace-pre-line` class to example description paragraphs in ProfileCards.tsx
+- **Impact:** Context, Action, and Result bullets now display on individual lines instead of running together
+- **Scope:** Applies to all 9 examples across 3 capability cards
+
+**Files Changed:**
+- components/ProfileCards.tsx (line 136: added `whitespace-pre-line` to description paragraph)
+
+**How to Verify:**
+1. Open any capability card on the homepage
+2. Expand the card to view examples
+3. Verify each example shows:
+   - `• Context` on its own line
+   - `• Action` on its own line
+   - `• Result` on its own line
+4. Check all 3 cards × 3 examples = 9 total examples display correctly
+
+**Benefits:**
+- ✅ Improved readability and scannability of capability card examples
+- ✅ Clean visual hierarchy with proper line breaks
+- ✅ Consistent with intended content structure (Context → Action → Result)
+
+---
+
 ## 2026-01-05 - Card Overflow Fix & Mobile Viewport Optimization
 
 **Summary:** Fixed capability card clipping issue and optimized mobile layout to ensure "What I Bring" section is visible without scrolling through aggressive compression and sticky header design.
