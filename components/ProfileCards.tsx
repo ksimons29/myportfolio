@@ -133,7 +133,7 @@ export default function ProfileCards() {
                         <h4 className="font-display text-base lg:text-lg font-medium text-ink mb-2">
                           {example.project}
                         </h4>
-                        <p className="text-sm text-ink-muted leading-relaxed">
+                        <p className="text-sm text-ink-muted leading-relaxed whitespace-pre-line">
                           {example.description}
                         </p>
                       </div>
